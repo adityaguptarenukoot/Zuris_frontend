@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { useMicroInteractions } from "../App";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaTwitter, FaYoutube } from "react-icons/fa";
+import useMicroInteractions from "../lib/microinteraction";
 
 const Footer = () => {
   const footerRef = useRef(null);
