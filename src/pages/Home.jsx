@@ -7,7 +7,7 @@ import gsap from "gsap";
 import BackgroundVisuals from "../components/BackgroundVisuals";
 import KeyDifferentiators from "../components/Sections/KeyDifferentiators";
 import HowWeWork from "../components/HowWeWork";
-import AiDevProcess from "../components/AiDevProcess";
+import AiDevProcess from "../components/Sections/AiDevProcess";
 
 const Home = () => {
   const heroRef = useRef(null);
