@@ -111,7 +111,6 @@ export function useMicroInteractions() {
 
 
 
-// Enhanced Home component with smooth scroll - FIXED BUTTON BUG
 
 
 // Main App component

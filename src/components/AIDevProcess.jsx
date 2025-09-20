@@ -1,8 +1,9 @@
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 
-const AIDevProcess = () => {
+const AiDevProcess = () => {
   const processRef = useRef(null);
 
   useGSAP(() => {
@@ -102,4 +103,4 @@ const AIDevProcess = () => {
   );
 };
 
-export default AIDevProcess;
+export default AiDevProcess;
