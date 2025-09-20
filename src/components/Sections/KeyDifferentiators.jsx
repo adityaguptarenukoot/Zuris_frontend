@@ -134,9 +134,9 @@ const KeyDifferentiators = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
+    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-white  to-white text-black relative overflow-hidden">
       {/* Enhanced Background Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl opacity-20"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
       <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-cyan-400 rounded-full filter blur-3xl opacity-10 transform -translate-x-1/2 -translate-y-1/2"></div>
       
@@ -150,7 +150,7 @@ const KeyDifferentiators = () => {
             </span>
             We're Building Your AI-Powered Future
           </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl text-black max-w-4xl mx-auto leading-relaxed">
             The AI revolution isn't coming—it's here. Every day you delay is market share lost, 
             efficiency sacrificed, and opportunities handed to smarter competitors.
           </p>
@@ -162,11 +162,11 @@ const KeyDifferentiators = () => {
             <div key={item.id} className="differentiator-card bg-white/15 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-white/30 shadow-2xl">
               <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
                 <div className={`w-24 h-24 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                  <img src={item.icon} alt={item.title} className="w-12 h-12" />
+                  <img src={item.icon} alt={item.title} className="w-21 h-21" />
                 </div>
                 <div className={`flex-grow text-center ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                  <h3 className="text-3xl font-bold mb-4 text-white">{item.title}</h3>
-                  <p className="text-lg text-gray-300 leading-relaxed">{item.description}</p>
+                  <h3 className="text-3xl font-bold mb-4 text-black">{item.title}</h3>
+                  <p className="text-lg text-black-300 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </div>

@@ -29,7 +29,7 @@ const OurPurpose = () => {
   return (
     <section
       ref={purposeRef}
-      className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden"
+      className="py-24 bg-gradient-to-br from-white to-white text-black relative overflow-hidden"
     >
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -59,12 +59,12 @@ const OurPurpose = () => {
         <p className="text-xl leading-relaxed mb-8 max-w-4xl mx-auto">
           The world generates over <span className="text-yellow-400 font-bold">2.5 quintillion bytes</span> of data daily, 
           yet most organizations struggle to transform this data into 
-          <span className="text-cyan-400 font-bold"> actionable business value</span> and competitive advantage.
+          <span className="text-cyan-800 font-bold"> actionable business value</span> and competitive advantage.
         </p>
         
         <p className="text-lg opacity-90 leading-relaxed mb-12 max-w-3xl mx-auto">
-          Organizations that fail to embed <span className="text-blue-300 font-semibold">Artificial Intelligence strategically</span> into their core operations will inevitably fall behind in today's data-driven economy. 
-          <span className="text-red-300 font-semibold">Raw data without intelligent processing is merely digital noise</span>.
+          Organizations that fail to embed <span className="text-blue-500 font-semibold">Artificial Intelligence strategically</span> into their core operations will inevitably fall behind in today's data-driven economy. 
+          <span className="text-green-600 font-semibold">Raw data without intelligent processing is merely digital noise</span>.
         </p>
 
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12 mb-12 max-w-6xl mx-auto">
@@ -73,28 +73,28 @@ const OurPurpose = () => {
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 backdrop-blur-sm border border-blue-400/20 rounded-2xl p-6">
-              <h4 className="text-xl font-bold mb-4 text-blue-300">Real-Time Decision Intelligence</h4>
+              <h4 className="text-xl font-bold mb-4 text-blue-600">Real-Time Decision Intelligence</h4>
               <p className="text-base opacity-90 leading-relaxed">
                 Process billions of data points instantaneously to optimize operations, detect anomalies, and deliver
                 hyper-personalized customer experiences at enterprise scale.
               </p>
             </div>
             <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 backdrop-blur-sm border border-purple-400/20 rounded-2xl p-6">
-              <h4 className="text-xl font-bold mb-4 text-purple-300">Predictive Business Intelligence</h4>
+              <h4 className="text-xl font-bold mb-4 text-purple-800">Predictive Business Intelligence</h4>
               <p className="text-base opacity-90 leading-relaxed">
                 Leverage advanced machine learning models to predict customer behavior, prevent operational downtime,
                 and anticipate market trends ahead of competitors.
               </p>
             </div>
             <div className="bg-gradient-to-br from-cyan-900/30 to-cyan-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-6">
-              <h4 className="text-xl font-bold mb-4 text-cyan-300">Intelligent Process Automation</h4>
+              <h4 className="text-xl font-bold mb-4 text-cyan-900">Intelligent Process Automation</h4>
               <p className="text-base opacity-90 leading-relaxed">
                 Replace costly manual workflows with sophisticated automation that accelerates processes,
                 eliminates human error, and redirects talent to high-value strategic initiatives.
               </p>
             </div>
             <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 backdrop-blur-sm border border-green-400/20 rounded-2xl p-6">
-              <h4 className="text-xl font-bold mb-4 text-green-300">Revenue Stream Innovation</h4>
+              <h4 className="text-xl font-bold mb-4 text-green-800">Revenue Stream Innovation</h4>
               <p className="text-base opacity-90 leading-relaxed">
                 Unlock previously untapped revenue opportunities through predictive maintenance services,
                 AI-driven product recommendations, and data monetization strategies.
@@ -113,7 +113,7 @@ const OurPurpose = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
               <div className="w-8 h-8 bg-white rounded-lg opacity-90"></div>
@@ -144,7 +144,43 @@ const OurPurpose = () => {
               adaptive learning systems.
             </p>
           </div>
+        </div> */}
+
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/20">
+          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-10 h-10 bg-white rounded-lg opacity-90"></div>
+          </div>
+          <h3 className="text-xl font-bold mb-4 text-cyan-400">Data-First Strategic Framework</h3>
+          <p className="opacity-90 leading-relaxed">
+            Architect comprehensive strategies aligned with business objectives, market positioning, and organizational
+            capabilities for sustainable competitive advantage.
+          </p>
         </div>
+        
+        <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20">
+          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-10 h-10 bg-white rounded-lg opacity-100"></div>
+          </div>
+          <h3 className="text-xl font-bold mb-4 text-purple-400">Enterprise Data Ecosystem</h3>
+          <p className="opacity-90 leading-relaxed">
+            Transform disparate data sources into unified strategic assets that drive decision-making, operational
+            efficiency, and customer intelligence.
+          </p>
+        </div>
+        
+        <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-green-500/20">
+          <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+            <div className="w-10 h-10 bg-white rounded-lg opacity-90"></div>
+          </div>
+          <h3 className="text-xl font-bold mb-4 text-green-400">Continuous Innovation Engine</h3>
+          <p className="opacity-90 leading-relaxed">
+            Establish ongoing optimization frameworks through advanced model retraining, performance monitoring, and
+            adaptive learning systems.
+          </p>
+        </div>
+      </div>
+
       </div>
     </section>
   );
