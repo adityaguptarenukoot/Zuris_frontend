@@ -87,6 +87,7 @@ const submithandler = async (e) => {
                     <option value={"AI Automation & Transformation"}>AI Automation & Transformation</option>
                     <option value={"Collaborative Development"}>Collaborative Development</option>
                     <option value={"Startup Growth & Acceleration"}>Startup Growth & Acceleration</option>
+                    <option value={"Data Intelligence & Analytics Platform"}>Data Intelligence & Analytics Platform</option>
             </select>
           </div>
           
@@ -106,3 +107,5 @@ const submithandler = async (e) => {
 }
 
 export default Contact;
+
+

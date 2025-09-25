@@ -58,8 +58,8 @@ const Navigation = () => {
             <Link to="/about" className="font-medium text-gray-700 hover:text-blue-600">
               About
             </Link>
-            <Link to="/contact" className="font-medium text-gray-700 hover:text-blue-600">
-              Contact
+            <Link to="/industries" className="font-medium text-gray-700 hover:text-blue-600">
+              Industry
             </Link>
           </div>
 
@@ -210,3 +210,4 @@ const Navigation = () => {
   );
 };
 export default Navigation;
+

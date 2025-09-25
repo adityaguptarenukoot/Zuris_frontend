@@ -28,7 +28,7 @@ const KeyDifferentiators = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 2.6,
+        duration: 1.2, // Reduced from 2.6 for better performance
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -40,41 +40,23 @@ const KeyDifferentiators = () => {
 
     // Animate differentiator cards with stagger
     gsap.fromTo(sectionRef.current.querySelectorAll('.differentiator-card'),
-      { x: -100, opacity: 0, rotationY: 45 },
-      {
-        x: 0,
-        opacity: 1,
-        rotationY: 0,
-        duration: 1.1,
-        ease: "power2.out",
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: sectionRef.current.querySelector('.differentiators-container'),
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-
-    // Animate CTA section
-    gsap.fromTo(sectionRef.current.querySelector('.cta-section'),
-      { y: 80, opacity: 0, scale: 0.9 },
+      { y: 50, opacity: 0 }, // Changed from x: -100, rotationY: 45 for better performance
       {
         y: 0,
         opacity: 1,
-        scale: 1,
-        duration: 2.0,
-        ease: "back.out(2.0)",
+        duration: 0.8, // Reduced from 1.1
+        ease: "power2.out",
+        stagger: 0.15,
         scrollTrigger: {
-          trigger: sectionRef.current.querySelector('.cta-section'),
-          start: "top 85%",
+          trigger: sectionRef.current.querySelector('.differentiators-container'),
+          start: "top 90%",
           toggleActions: "play none none reverse"
         }
       }
     );
   });
 
-  const backendUrl = "http://localhost:4000";
+  const backendUrl = "https://zuris-backend.onrender.com";
 
   const submithandler = async (e) => {
     e.preventDefault();
@@ -102,101 +84,66 @@ const KeyDifferentiators = () => {
     }
   }
 
+  // Updated differentiators to match client's requirements
   const differentiators = [
     {
       id: 1,
-      title: "AI-First Approach",
-      description: "We don't just automate processes—we inject intelligence into every facet of your business operations. While others bolt on AI as an afterthought, we architect your entire competitive advantage around artificial intelligence from day one.",
-      icon: "/images/ai-brain.jpg",   
-      gradient: "from-blue-500 to-cyan-500"
+      title: "Data-First Strategy",
+      description: "Turn your data into a strategic weapon with AI models that learn, adapt, and optimize continuously.",
+      image: "/images/data_strategy.png"
     },
     {
       id: 2,
-      title: "End-to-End Mastery", 
-      description: "From ideation through implementation to ongoing optimization—we own your complete AI journey. No vendor juggling, no integration nightmares, no excuses. One partner, one vision, total accountability.",
-      icon: "/images/end-to-end.jpeg",  
-      gradient: "from-purple-500 to-pink-500"
+      title: "Tailored AI Solutions",
+      description: "Custom-built AI that fits your exact business model, not one-size-fits-all platforms.",
+      image: "/images/ai_solution.png"
     },
     {
       id: 3,
-      title: "Enterprise-Grade Security",
-      description: "Built-in governance, compliance, and security across every service and implementation. Your data remains yours, your competitive advantage stays protected, and your regulatory requirements are never an afterthought.",
-      icon: "/images/security-shield.jpg",  
-      gradient: "from-green-500 to-teal-500"
-    },
-    {
-      id: 4,
-      title: "Startup Speed, Enterprise Quality",
-      description: "We move at the speed of opportunity with the precision of experience. Rapid prototyping meets battle-tested engineering practices. Get to market faster without cutting corners.",
-      icon: "/images/speed-quality.jpeg",  
-      gradient: "from-orange-500 to-red-500"
+      title: "Continuous Innovation",
+      description: "Stay ahead with AI solutions that evolve with emerging technologies and market demands.",
+      image: "/images/innovation.png"
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-br from-white  to-white text-black relative overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full filter blur-3xl opacity-20"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
-      <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-cyan-400 rounded-full filter blur-3xl opacity-10 transform -translate-x-1/2 -translate-y-1/2"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Bold Headline */}
-        <div className="text-center mb-20">
-          <h2 className="hero-headline text-5xl md:text-6xl font-extrabold mb-8 leading-tight tracking-tight">
-            While Your Competitors 
-            <span className="block bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
+    <section ref={sectionRef} className="py-20 px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <div className="max-w-7xl mx-auto text-center">
+        {/* Updated Headline */}
+        <div className="mb-16">
+          <h2 className="hero-headline text-4xl md:text-5xl font-bold mb-6">
+            While Your Competitors<br/>
+            <span className="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">
               Struggle with Yesterday's Tools
-            </span>
+            </span><br/>
             We're Building Your AI-Powered Future
           </h2>
-          <p className="text-2xl text-black max-w-4xl mx-auto leading-relaxed">
-            The AI revolution isn't coming—it's here. Every day you delay is market share lost, 
-            efficiency sacrificed, and opportunities handed to smarter competitors.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            The difference isn't just technology—it's strategic advantage that compounds over time.
           </p>
         </div>
 
-        {/* 4 Key Differentiators */}
-        <div className="differentiators-container space-y-12">
+        {/* Updated 3-Column Grid Layout */}
+        <div className="differentiators-container grid md:grid-cols-3 gap-8">
           {differentiators.map((item, index) => (
-            <div key={item.id} className="differentiator-card bg-white/15 backdrop-blur-md rounded-3xl p-10 md:p-14 border border-white/30 shadow-2xl">
-              <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8`}>
-                <div className={`w-24 h-24 bg-gradient-to-r ${item.gradient} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                  <img src={item.icon} alt={item.title} className="w-21 h-21" />
-                </div>
-                <div className={`flex-grow text-center ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
-                  <h3 className="text-3xl font-bold mb-4 text-black">{item.title}</h3>
-                  <p className="text-lg text-black-300 leading-relaxed">{item.description}</p>
-                </div>
+            <div key={item.id} className="differentiator-card p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300">
+              {/* Icon with white background and rounded corners */}
+              <div className="text-4xl mb-4">
+                <img 
+                  src={item.image}
+                  className="w-12 h-12 mx-auto mb-6 rounded-lg"
+                  style={{ backgroundColor: 'white', borderRadius: '10px' }}
+                  alt={`${item.title} Icon`}
+                />
               </div>
+              <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+              <p className="text-gray-300">{item.description}</p>
             </div>
           ))}
         </div>
-
-        <div className="cta-section mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 bg-white/5"></div>
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                Stop Wondering. Start Knowing.
-              </h3>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-                Get your <strong>FREE AI Readiness Assessment</strong> and discover exactly where your business stands 
-                in the AI revolution—and what you need to do to lead your industry.
-              </p>
-              <button 
-                onClick={() => setIsContactModalOpen(true)}
-                className="bg-white text-blue-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1">
-                Claim Your FREE Assessment
-              </button>
-              <p className="text-sm text-blue-200 mt-4">
-                Results in 48 hours • No obligations • Industry-specific insights
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
+      {/* Contact Modal remains the same */}
       {isContactModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">

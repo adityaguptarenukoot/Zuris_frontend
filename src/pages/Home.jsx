@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import IndustriesServed from "../components/pages/Industries";
-import OurPurpose from "../components/Sections/OurPurpose";
+import IndustriesServed from "./Industries";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -8,6 +7,7 @@ import BackgroundVisuals from "../components/BackgroundVisuals";
 import KeyDifferentiators from "../components/Sections/KeyDifferentiators";
 import HowWeWork from "../components/HowWeWork";
 import AiDevProcess from "../components/Sections/AiDevProcess";
+import WhyAI from "../components/Sections/WhyAI";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -64,11 +64,11 @@ const Home = () => {
     const icon = card.querySelector('.service-icon');
     
     if (isHover) {
-      gsap.to(card, { y: -10, scale: 1.05, duration: 0.0, ease: "power2.out" });
-      gsap.to(icon, { scale: 1.2, rotation: 5, duration: 0.2, ease: "back.out(1.7)" });
+      gsap.to(card, { y: -10, scale: 1.05, duration: 0.15, ease: "power2.out" });
+      gsap.to(icon, { scale: 1.2, rotation: 5, duration: 0.1, ease: "back.out(1.7)" });
     } else {
-      gsap.to(card, { y: 0, scale: 1, duration: 0.0, ease: "power2.out" });
-      gsap.to(icon, { scale: 1, rotation: 0, duration: 0.2, ease: "back.out(1.7)" });
+      gsap.to(card, { y: 0, scale: 1, duration: 0.15, ease: "power2.out" });
+      gsap.to(icon, { scale: 1, rotation: 0, duration: 0.1, ease: "back.out(1.7)" });
     }
   };
 
@@ -119,83 +119,124 @@ const Home = () => {
         </div>
       </main>
 
+     
       {/* Core Services Preview */}
-      <section ref={servicesRef} className="py-20 bg-white/80 backdrop-blur-sm relative">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="services-title text-5xl font-bold text-center mb-16 text-gray-800">
-            Our <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Core Services</span>
-          </h2>
-          <div className="services-grid grid md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
-             {[
-                { 
-                    title: "AI Consultation & Advisory", 
-                    desc: "Strategic AI roadmaps that transform business challenges into competitive advantages. From assessment to implementation, we architect your AI-powered future.", 
-                    color: "from-blue-500 to-cyan-500" 
-                  },
-                  { 
-                    title: "Cybersecurity Services", 
-                    desc: "AI-powered security that detects and responds to threats faster than human-only approaches. Intelligent protection for the modern enterprise.", 
-                    color: "from-red-500 to-pink-500" 
-                  },
-                  { 
-                    title: "AI Automation & Transformation", 
-                    desc: "Modern AI/MLOps that identifies opportunities and automates complex business processes. Transform operations with intelligent workflow automation.", 
-                    color: "from-green-500 to-teal-500" 
-                  },
-                  { 
-                    title: "Collaborative Development", 
-                    desc: "End-to-end product development from MVP to enterprise architecture. Agile methodologies meet AI/MLOps for scalable solutions.", 
-                    color: "from-purple-500 to-indigo-500" 
-                  },
-                  { 
-                    title: "Startup Growth & Acceleration", 
-                    desc: "Tech partnership that builds scalable, cloud-native architectures with embedded AI. From vision to market-leading execution.", 
-                    color: "from-orange-500 to-yellow-500" 
-                  }
-                ].map((service, index) => (
-
-              <div
-                key={index}
-                className="service-card bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center group cursor-pointer border border-gray-100 relative overflow-hidden"
-                onMouseEnter={(e) => handleServiceHover(e, true)}
-                onMouseLeave={(e) => handleServiceHover(e, false)}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div className={`service-icon w-20 h-20 bg-gradient-to-r ${service.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg relative z-10`}>
-                  <span className="text-white text-3xl font-bold">{service.title.charAt(0)}</span>
-                </div>
-                <h3 className="font-bold text-gray-800 mb-3 text-lg relative z-10">{service.title}</h3>
-                <div className="text-sm text-gray-600 leading-relaxed relative z-10">
-                        {service.desc.split('. ').map((sentence, idx) => (
-                          <div key={idx} className="flex items-start mb-2">
-                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                            <span>{sentence}{idx < service.desc.split('. ').length - 1 ? '.' : ''}</span>
-                          </div>
-                        ))}
-                      </div>
-                
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-200 rounded-2xl transition-colors duration-300"></div>
-              </div>
-            ))}
+<section ref={servicesRef} className="py-20 bg-white/80 backdrop-blur-sm relative">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="services-title text-5xl font-bold text-center mb-6 text-gray-800">
+      Our Core Capabilities
+    </h2>
+    <p className="text-xl text-center mb-16 text-gray-600 max-w-3xl mx-auto">
+      Three pillars of AI excellence that drive business transformation
+    </p>
+    
+    <div className="services-grid grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "AI Strategy & Advisory",
+          desc: "Strategic roadmaps that align AI initiatives with business objectives, ensuring maximum ROI and competitive advantage.",
+          image: "/images/ai_strategy.png", 
+          features: [
+            "AI Readiness Assessment",
+            "Technology Stack Selection", 
+            "ROI Optimization"
+          ]
+        },
+        {
+          title: "AI Automation & Transformation", 
+          desc: "End-to-end automation solutions that eliminate inefficiencies and unlock exponential productivity gains.",
+          image: "/images/ai_transformation.png",
+          features: [
+            "Process Automation",
+            "Intelligent Document Processing",
+            "Predictive Analytics"
+          ]
+        },
+        {
+          title: "Collaborative Development",
+          desc: "Partnership-driven approach where your team gains AI expertise while we deliver cutting-edge solutions.",
+          image: "/images/collaborative_development.png", 
+          features: [
+            "Team Augmentation", 
+            "Knowledge Transfer",
+            "Ongoing Support"
+          ]
+        }
+      ].map((service, index) => (
+        <div
+          key={index}
+          className="service-card bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-160 group cursor-pointer border  relative overflow-hidden bg-gradient-to-br from-blue-50/70 to-purple-50/70 border-blue-200"
+          onMouseEnter={(e) => handleServiceHover(e, true)}
+          onMouseLeave={(e) => handleServiceHover(e, false)}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-160"></div>
+          
+          {/* Icon and Title Row */}
+          <div className="flex items-center mb-6 relative z-10">
+            <img 
+              src={service.image}
+              className="service-icon w-12 h-12 mr-4 rounded-lg object-cover shadow-md" 
+              alt={`${service.title} Icon`}
+            />
+            <h3 className="text-xl font-bold text-gray-800">{service.title}</h3>
           </div>
           
-          <div className="text-center">
-            <Link to="/services" className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-              View All Services
-            </Link>
-          </div>
+          {/* Description */}
+          <p className="text-gray-600 mb-4 relative z-10">
+            {service.desc}
+          </p>
+          
+          {/* Feature List */}
+          <ul className="text-sm text-gray-600 space-y-2 relative z-10">
+            {service.features.map((feature, idx) => (
+              <li key={idx} className="flex items-center">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-200 rounded-2xl transition-colors duration-300"></div>
         </div>
-      </section>
+      ))}
+    </div>
+    
+    {/* Explore Services Link */}
+    <div className="mt-12 text-center">
+      <Link 
+        to="/services" 
+        className="inline-flex items-center text-blue-600 hover:text-blue-500 transition-colors text-lg font-semibold group"
+      >
+        Explore Our Services
+        <svg 
+          className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth="2" 
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          ></path>
+        </svg>
+      </Link>
+    </div>
+  </div>
+</section>
+
+
        <KeyDifferentiators />
       <div ref={industriesRef}>
         <IndustriesServed />
       </div>
       <HowWeWork />
-      <OurPurpose />
+      <WhyAI />
       <AiDevProcess />
     </div>
   );
 };
 
 export default Home;
+

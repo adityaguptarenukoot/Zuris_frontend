@@ -5,17 +5,17 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToTop } from './components/ScrollToTop';
 import IndustryDetail from './pages/IndustryDetail';
-import ProcessStepDetail from "./pages/ProcessStepDetail";
-import './App.css';
 import Policy from './pages/Policy';
 import Home from './pages/Home';
-import Terms from './pages/Terms';
 import CookiePolicy from './pages/CookiePolicy';
 import Footer from './components/Footer';
 import About from './components/About';
 import Contact from './pages/Contact';
 import Services from './components/Services';
 import Navigation from './components/Navigation';
+import OurPurpose from './components/Sections/OurPurpose';
+import IndustryPage from './pages/IndustryPage';
+
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -68,13 +68,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/policy' element={<Policy/>} />
-            <Route path='/terms' element={<Terms/>} />
+            <Route path='/industries' element={<IndustryPage/>} />
             <Route path='/cookie-policy' element={<CookiePolicy/>} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/industry/:industryName" element={<IndustryDetail />} />
-            <Route path="/process/:stepKey" element={<ProcessStepDetail />} />
+            <Route path="/key-differentiators" element={<OurPurpose />} />
           </Routes>
         </div>
         <Footer />

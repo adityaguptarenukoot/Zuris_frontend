@@ -127,19 +127,6 @@ const Footer = () => {
               </div>
             </div>
             
-            {/* <div>
-              <h4 className="font-semibold mb-3">Newsletter</h4>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-2 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-r-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div> */}
           </div>
         </div>
 

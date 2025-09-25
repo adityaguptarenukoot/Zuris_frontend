@@ -99,7 +99,21 @@ const Services = () => {
       "Embed AI modules and capabilities early in the product development lifecycle",
       "Provide ongoing innovation insights, governance frameworks and performance optimization"
     ]
+  },
+  {
+    title: "Data Intelligence & Analytics Platform",
+    desc: "Transform raw data into actionable business intelligence through advanced analytics platforms, predictive modeling, and real-time decision support systems.",
+    image: "/images/startup-growth.jpg",
+    icon: "📊",
+    color: "from-teal-500 to-emerald-500",
+    features: [
+      "Design unified data lakes and warehouses for enterprise-wide analytics",
+      "Implement predictive models for forecasting and trend analysis",
+      "Build real-time dashboards and business intelligence reporting systems",
+      "Deploy machine learning pipelines for automated insights and anomaly detection"
+    ]
   }
+  
 ];
 
 
