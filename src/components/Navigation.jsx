@@ -55,11 +55,11 @@ const Navigation = () => {
             <Link to="/services" className="font-medium text-gray-700 hover:text-blue-600">
               Services
             </Link>
-            <Link to="/about" className="font-medium text-gray-700 hover:text-blue-600">
-              About
-            </Link>
             <Link to="/industries" className="font-medium text-gray-700 hover:text-blue-600">
               Industry
+            </Link>
+            <Link to="/about" className="font-medium text-gray-700 hover:text-blue-600">
+              About
             </Link>
           </div>
 
