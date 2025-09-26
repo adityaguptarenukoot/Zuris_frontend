@@ -4,161 +4,135 @@ import { useParams, Link } from 'react-router-dom';
 const IndustryDetail = () => {
   const { industryName } = useParams();
   
-  const industryData = {
-    healthcare: {
-      title: "Healthcare AI Solutions",
-      hero: "Transforming Patient Care Through Intelligent Technology",
-      image: "/images/ai-consultation.jpg",
-      overview: "Our AI solutions for healthcare focus on improving patient outcomes, reducing costs, and streamlining operations through cutting-edge technology.",
+ const industryData = {
+    finance: {
+      title: "Finance AI Solutions",
+      hero: "Transforming Financial Services Through Intelligent Technology",
+      image: "/images/finance.png",
+      overview: "Our AI solutions for finance focus on risk management, fraud detection, algorithmic trading, and regulatory compliance through cutting-edge technology that enhances decision-making and operational efficiency.",
       solutions: [
         {
-          title: "AI-Powered Diagnostics",
-          description: "Advanced machine learning algorithms that assist medical professionals in accurate and early disease detection."
+          title: "AI-Powered Risk Assessment",
+          description: "Advanced machine learning models that analyze market conditions, customer behavior, and historical data to provide real-time risk assessments and credit scoring."
         },
         {
-          title: "Patient Care Optimization", 
-          description: "Intelligent systems that personalize treatment plans and monitor patient progress in real-time."
+          title: "Fraud Detection & Prevention", 
+          description: "Intelligent systems that detect suspicious transactions and patterns in real-time, protecting both institutions and customers with 99.9% accuracy."
         },
         {
-          title: "Medical Research Acceleration",
-          description: "Data analytics and AI models that speed up drug discovery and clinical research processes."
+          title: "Algorithmic Trading Systems",
+          description: "Sophisticated AI algorithms that execute trades at optimal times based on market analysis, predictive modeling, and automated decision-making."
         }
       ],
       benefits: [
-        "Improved diagnostic accuracy by up to 95%",
-        "Reduced treatment costs by 30%", 
-        "24/7 patient monitoring capabilities",
-        "Faster drug discovery timelines"
+        "Reduce financial risks by up to 75%",
+        "99.9% fraud detection accuracy with minimal false positives",
+        "Automated regulatory compliance monitoring",
+        "Real-time portfolio optimization and management"
       ]
     },
-    "financial-services": {
-      title: "Financial Services AI",
-      hero: "Secure, Intelligent Financial Solutions",
-      image: "/images/cybersecurity.jpg",
-      overview: "Revolutionize financial services with AI-driven risk management, fraud detection, and customer insights.",
+    healthcare: {
+      title: "Healthcare AI Solutions",
+      hero: "Revolutionizing Patient Care Through Intelligent Diagnostics",
+      image: "/images/healthcare.png",
+      overview: "Transform healthcare delivery with AI-powered diagnostics, personalized treatment plans, and operational efficiency solutions that improve patient outcomes while reducing costs.",
       solutions: [
         {
-          title: "Risk Management",
-          description: "Advanced algorithms that assess and mitigate financial risks in real-time."
+          title: "AI Medical Imaging & Diagnostics",
+          description: "Advanced computer vision systems that analyze medical images with superhuman accuracy to detect diseases early and assist in clinical decision-making."
         },
         {
-          title: "Fraud Detection",
-          description: "AI systems that identify and prevent fraudulent transactions with 99.9% accuracy."
+          title: "Personalized Treatment Planning",
+          description: "AI systems that analyze patient data to recommend personalized treatment plans based on individual characteristics, medical history, and genetic factors."
         },
         {
-          title: "Algorithmic Trading",
-          description: "Intelligent trading systems that optimize investment strategies and market analysis."
+          title: "Drug Discovery Acceleration",
+          description: "AI-accelerated drug discovery platforms that identify promising compounds and predict their effectiveness, reducing development time and costs."
         }
       ],
       benefits: [
-        "99.9% fraud detection accuracy",
-        "50% reduction in risk assessment time",
-        "Automated compliance monitoring", 
-        "Enhanced customer insights"
+        "Improve diagnosis accuracy by up to 40%",
+        "Reduce treatment costs through personalized medicine",
+        "Accelerate drug discovery by 50%",
+        "24/7 patient monitoring and early warning systems"
+      ]
+    },
+    automotive: {
+      title: "Automotive AI Solutions", 
+      hero: "Driving Innovation in Smart Mobility and Manufacturing",
+      image: "/images/automotive.png",
+      overview: "Accelerate automotive innovation with AI-powered autonomous systems, predictive maintenance, and intelligent manufacturing solutions for the future of mobility.",
+      solutions: [
+        {
+          title: "Autonomous Driving Systems",
+          description: "Advanced AI systems that enable self-driving capabilities with real-time decision making, sensor fusion, and safety-critical performance."
+        },
+        {
+          title: "Predictive Maintenance",
+          description: "AI-powered systems that predict vehicle maintenance needs before failures occur, optimizing fleet operations and reducing downtime."
+        },
+        {
+          title: "Smart Manufacturing & Quality Control",
+          description: "Intelligent manufacturing systems that optimize production processes, automate quality inspection, and reduce manufacturing defects."
+        }
+      ],
+      benefits: [
+        "Enhance vehicle safety through autonomous features",
+        "Reduce maintenance costs by up to 30%",
+        "Improve manufacturing quality and reduce defects by 60%",
+        "Optimize supply chain and inventory management"
       ]
     },
     manufacturing: {
       title: "Manufacturing AI Solutions",
-      hero: "Smart Factories, Intelligent Production",
-      image: "/images/automation.jpg",
-      overview: "Transform manufacturing operations with AI-powered automation, predictive maintenance, and quality control.",
+      hero: "Smart Factories and Intelligent Production Systems",
+      image: "/images/manufacturing.png",
+      overview: "Transform manufacturing operations with AI-driven automation, predictive analytics, and quality control systems that optimize efficiency and reduce operational costs.",
       solutions: [
         {
-          title: "Smart Factory Systems",
-          description: "IoT-integrated AI that optimizes production lines and reduces downtime."
+          title: "Smart Factory Automation",
+          description: "AI-powered systems that automate and optimize manufacturing processes for maximum efficiency, reducing human error and increasing throughput."
         },
         {
-          title: "Predictive Maintenance",
-          description: "Machine learning models that predict equipment failures before they occur."
+          title: "Predictive Quality Control",
+          description: "AI systems that predict and prevent quality issues before they occur in the production line, ensuring consistent product quality."
         },
         {
-          title: "Quality Control",
-          description: "Computer vision systems that detect defects with superhuman accuracy."
+          title: "Demand Forecasting & Planning",
+          description: "Advanced AI models that accurately predict demand patterns for better inventory management, production planning, and resource allocation."
         }
       ],
       benefits: [
-        "40% reduction in equipment downtime",
-        "95% quality control accuracy",
-        "30% increase in production efficiency",
-        "Significant cost savings"
+        "Increase production efficiency by up to 45%",
+        "Reduce manufacturing defects and waste significantly",
+        "Optimize inventory management and reduce stockouts",
+        "Minimize equipment downtime through predictive maintenance"
       ]
     },
-    "retail-ecommerce": {
-      title: "Retail & E-commerce AI", 
-      hero: "Personalized Shopping Experiences",
-      image: "/images/collaboration.jpg",
-      overview: "Enhance customer experiences and optimize operations with AI-driven personalization and inventory management.",
+    energy: {
+      title: "Energy AI Solutions",
+      hero: "Powering the Future with Intelligent Grid Management",
+      image: "/images/energy.png",
+      overview: "Optimize energy operations with AI-driven grid management, renewable integration, and intelligent energy trading systems for sustainable power solutions.",
       solutions: [
         {
-          title: "Personalized Recommendations",
-          description: "AI algorithms that suggest products based on customer behavior and preferences."
+          title: "Smart Grid Management",
+          description: "AI systems that optimize energy distribution, grid stability, and real-time load balancing for efficient power delivery across networks."
         },
         {
-          title: "Inventory Management", 
-          description: "Smart systems that optimize stock levels and predict demand patterns."
+          title: "Renewable Energy Integration",
+          description: "AI-powered systems that seamlessly integrate renewable energy sources into the grid while maintaining stability and optimizing performance."
         },
         {
-          title: "Customer Experience Enhancement",
-          description: "Chatbots and AI assistants that provide 24/7 customer support."
+          title: "Predictive Asset Management",
+          description: "AI systems that predict equipment failures and optimize maintenance schedules for power generation and distribution infrastructure."
         }
       ],
       benefits: [
-        "25% increase in conversion rates",
-        "30% reduction in inventory costs",
-        "24/7 customer support availability",
-        "Improved customer satisfaction"
-      ]
-    },
-    technology: {
-      title: "Technology Sector AI",
-      hero: "Accelerating Innovation Through AI", 
-      image: "/images/startup-growth.jpg",
-      overview: "Empower tech companies with AI solutions for product development, user experience, and innovation acceleration.",
-      solutions: [
-        {
-          title: "Product Development",
-          description: "AI-assisted development tools that accelerate time-to-market."
-        },
-        {
-          title: "User Experience Optimization",
-          description: "Machine learning systems that personalize user interfaces and interactions."
-        },
-        {
-          title: "Innovation Acceleration",
-          description: "AI platforms that identify market opportunities and optimize R&D processes."
-        }
-      ],
-      benefits: [
-        "50% faster product development",
-        "Improved user engagement rates",
-        "Data-driven innovation strategies",
-        "Competitive market advantages"
-      ]
-    },
-    transportation: {
-      title: "Transportation AI Solutions",
-      hero: "Smart Mobility and Logistics",
-      image: "/images/ai-consultation.jpg", 
-      overview: "Optimize transportation and logistics with AI-driven route optimization, autonomous systems, and intelligence.",
-      solutions: [
-        {
-          title: "Route Optimization",
-          description: "AI algorithms that find the most efficient routes and reduce fuel consumption."
-        },
-        {
-          title: "Autonomous Systems",
-          description: "Self-driving technology and automated vehicle management systems."
-        },
-        {
-          title: "Logistics Intelligence",
-          description: "Smart supply chain management and predictive logistics planning."
-        }
-      ],
-      benefits: [
-        "30% reduction in fuel costs",
-        "Improved delivery times",
-        "Enhanced safety measures",
-        "Optimized fleet management"
+        "Improve grid stability and reduce outages by up to 70%",
+        "Optimize energy distribution and reduce operational costs",
+        "Increase renewable energy integration by 40%",
+        "Predictive maintenance reduces asset downtime significantly"
       ]
     }
   };
@@ -254,3 +228,6 @@ const IndustryDetail = () => {
 };
 
 export default IndustryDetail;
+
+
+
