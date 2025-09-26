@@ -20,15 +20,15 @@ const KeyDifferentiators = () => {
   // Animation ref
   const sectionRef = useRef(null);
 
-  // GSAP animations
+  // GSAP animations - Optimized for faster loading
   useGSAP(() => {
-    // Animate headline
+    // Animate headline - Keep existing timing
     gsap.fromTo(sectionRef.current.querySelector('.hero-headline'),
       { y: 100, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1.2, // Reduced from 2.6 for better performance
+        duration: 1.2, // Keep original duration as requested
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -38,18 +38,18 @@ const KeyDifferentiators = () => {
       }
     );
 
-    // Animate differentiator cards with stagger
+    // Faster card animations
     gsap.fromTo(sectionRef.current.querySelectorAll('.differentiator-card'),
-      { y: 50, opacity: 0 }, // Changed from x: -100, rotationY: 45 for better performance
+      { y: 30, opacity: 0 }, // Reduced movement from 50 to 30
       {
         y: 0,
         opacity: 1,
-        duration: 0.8, // Reduced from 1.1
+        duration: 0.4, // Much faster - reduced from 0.8
         ease: "power2.out",
-        stagger: 0.15,
+        stagger: 0.08, // Reduced stagger from 0.15 to 0.08
         scrollTrigger: {
           trigger: sectionRef.current.querySelector('.differentiators-container'),
-          start: "top 90%",
+          start: "top 95%", // Start earlier - changed from 90% to 95%
           toggleActions: "play none none reverse"
         }
       }

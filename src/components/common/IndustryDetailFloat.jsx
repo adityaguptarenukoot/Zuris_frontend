@@ -1,8 +1,10 @@
+
 // import { useState, useEffect, useRef } from 'react';
 // import { useNavigate } from 'react-router-dom';
 
 // const IndustryDetailFloat = ({ industry, position, isVisible, onClose }) => {
 //   const [floatPosition, setFloatPosition] = useState({ x: 0, y: 0 });
+//   const [isClosing, setIsClosing] = useState(false);
 //   const floatRef = useRef(null);
 //   const navigate = useNavigate();
 
@@ -46,15 +48,24 @@
 //     }
 //   }, [position, isVisible]);
 
+//   // Smooth close function
+//   const handleClose = () => {
+//     setIsClosing(true);
+//     setTimeout(() => {
+//       setIsClosing(false);
+//       onClose();
+//     }, 300); // Match the CSS transition duration
+//   };
+
 //   // Handle click outside to close
 //   useEffect(() => {
 //     const handleClickOutside = (event) => {
-//       if (floatRef.current && !floatRef.current.contains(event.target)) {
-//         onClose();
+//       if (floatRef.current && !floatRef.current.contains(event.target) && !isClosing) {
+//         handleClose();
 //       }
 //     };
 
-//     if (isVisible) {
+//     if (isVisible && !isClosing) {
 //       document.addEventListener('mousedown', handleClickOutside);
 //       document.addEventListener('touchstart', handleClickOutside);
 //     }
@@ -63,24 +74,24 @@
 //       document.removeEventListener('mousedown', handleClickOutside);
 //       document.removeEventListener('touchstart', handleClickOutside);
 //     };
-//   }, [isVisible, onClose]);
+//   }, [isVisible, isClosing]);
 
 //   // Handle escape key
 //   useEffect(() => {
 //     const handleEscapeKey = (event) => {
-//       if (event.key === 'Escape') {
-//         onClose();
+//       if (event.key === 'Escape' && !isClosing) {
+//         handleClose();
 //       }
 //     };
 
-//     if (isVisible) {
+//     if (isVisible && !isClosing) {
 //       document.addEventListener('keydown', handleEscapeKey);
 //     }
 
 //     return () => {
 //       document.removeEventListener('keydown', handleEscapeKey);
 //     };
-//   }, [isVisible, onClose]);
+//   }, [isVisible, isClosing]);
 
 //   // Handle Learn More button click
 //   const handleLearnMore = () => {
@@ -89,43 +100,55 @@
 //       .replace(/&/g, '')
 //       .replace(/--+/g, '-');
     
-//     onClose(); // Close the float first
-//     navigate(`/industry/${industrySlug}`);
+//     handleClose(); // Use smooth close
+//     setTimeout(() => {
+//       navigate(`/industry/${industrySlug}`);
+//     }, 300); // Navigate after close animation
 //   };
 
 //   if (!isVisible || !industry) return null;
 
 //   return (
 //     <>
-//       {/* Mobile backdrop */}
+//       {/* Mobile backdrop with smooth transition */}
 //       {window.innerWidth < 768 && (
-//         <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" />
+//         <div 
+//           className={`fixed inset-0 bg-black z-40 md:hidden transition-opacity duration-300 ease-out ${
+//             isClosing ? 'opacity-0' : 'bg-opacity-50 opacity-100'
+//           }`} 
+//         />
 //       )}
       
 //       <div 
 //         ref={floatRef}
 //         className={`fixed z-50 bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-300 ease-out ${
 //           window.innerWidth < 768 ? 'w-11/12 max-w-sm' : 'w-96'
+//         } ${
+//           isClosing 
+//             ? 'opacity-0 scale-95 translate-y-4' 
+//             : 'opacity-100 scale-100 translate-y-0'
 //         }`}
 //         style={{
 //           left: `${floatPosition.x}px`,
 //           top: `${floatPosition.y}px`,
 //           maxHeight: window.innerWidth < 768 ? '80vh' : '500px',
-//           overflow: 'auto',
-//           transform: isVisible ? 'scale(1) opacity(1)' : 'scale(0.95) opacity(0)'
+//           overflow: 'auto'
 //         }}
 //       >
 //         {/* Close button */}
 //         <button
-//           onClick={onClose}
-//           className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors duration-200 z-10"
+//           onClick={handleClose}
+//           disabled={isClosing}
+//           className={`absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-200 z-10 ${
+//             isClosing ? 'opacity-50 scale-95' : 'opacity-100 scale-100'
+//           }`}
 //         >
 //           <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 //             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
 //           </svg>
 //         </button>
 
-//         <div className="p-6">
+//         <div className={`p-6 transition-opacity duration-300 ${isClosing ? 'opacity-75' : 'opacity-100'}`}>
 //           {/* Header */}
 //           <div className="flex items-center mb-4 pr-8">
 //             <img 
@@ -193,7 +216,10 @@
 //           <div className="pt-4 border-t border-gray-200">
 //             <button 
 //               onClick={handleLearnMore}
-//               className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base font-semibold rounded-lg hover:scale-105 transition-transform duration-200 shadow-lg"
+//               disabled={isClosing}
+//               className={`w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base font-semibold rounded-lg hover:scale-105 transition-all duration-200 shadow-lg ${
+//                 isClosing ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
+//               }`}
 //             >
 //               Learn More About {industry.name}
 //             </button>
@@ -282,7 +308,7 @@ const IndustryDetailFloat = ({ industry, position, isVisible, onClose }) => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
     };
-  }, [isVisible, isClosing]);
+  }, );
 
   // Handle escape key
   useEffect(() => {
@@ -299,7 +325,7 @@ const IndustryDetailFloat = ({ industry, position, isVisible, onClose }) => {
     return () => {
       document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isVisible, isClosing]);
+  }, );
 
   // Handle Learn More button click
   const handleLearnMore = () => {
@@ -318,14 +344,18 @@ const IndustryDetailFloat = ({ industry, position, isVisible, onClose }) => {
 
   return (
     <>
-      {/* Mobile backdrop with smooth transition */}
-      {window.innerWidth < 768 && (
-        <div 
-          className={`fixed inset-0 bg-black z-40 md:hidden transition-opacity duration-300 ease-out ${
-            isClosing ? 'opacity-0' : 'bg-opacity-50 opacity-100'
-          }`} 
-        />
-      )}
+      {/* Full screen blur backdrop for all screen sizes */}
+      <div 
+        className={`fixed inset-0 z-40 transition-all duration-300 ease-out ${
+          isClosing 
+            ? 'backdrop-blur-0 bg-black/0' 
+            : 'backdrop-blur-sm bg-black/30'
+        }`}
+        style={{
+          backdropFilter: isClosing ? 'blur(0px)' : 'blur(4px)',
+          WebkitBackdropFilter: isClosing ? 'blur(0px)' : 'blur(4px)'
+        }}
+      />
       
       <div 
         ref={floatRef}
