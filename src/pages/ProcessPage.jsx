@@ -1,9 +1,10 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
+// import { backendUrl } from './Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,43 +13,42 @@ const ProcessPage = () => {
   const processRef = useRef(null);
   
   // Contact modal state
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    fullname: "",
-    email: "",
-    company: "",
-    service: "AI Development Process Consultation",
-    project_details: "I'm interested in learning more about your AI development process for my business."
-  });
+  // const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  // const [loading, setLoading] = useState(false);
+  // const [form, setForm] = useState({
+  //   fullname: "",
+  //   email: "",
+  //   company: "",
+  //   service: "AI Development Process Consultation",
+  //   project_details: "I'm interested in learning more about your AI development process for my business."
+  // });
 
-  const backendUrl = "https://zuris-backend.onrender.com";
 
-  const submithandler = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const {fullname, email, company, service, project_details} = form;
-      const response = await axios.post(backendUrl + '/api/form/submit', {fullname, email, company, service, project_details});
-      if(response.data.success){
-        console.log(response.data.message)
-      } else {
-        console.log(response.data.message)
-      }
-    } catch (error) {
-      console.log(error.message)
-    } finally {
-      setLoading(false);
-      setForm({
-        fullname: '',
-        email: '',
-        company: '',
-        service: 'AI Development Process Consultation',
-        project_details: 'I am interested in learning more about your AI development process for my business.'
-      })
-      setIsContactModalOpen(false);
-    }
-  }
+  // const submithandler = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   try {
+  //     const {fullname, email, company, service, project_details} = form;
+  //     const response = await axios.post(backendUrl + '/api/form/submit', {fullname, email, company, service, project_details});
+  //     if(response.data.success){
+  //       console.log(response.data.message)
+  //     } else {
+  //       console.log(response.data.message)
+  //     }
+  //   } catch (error) {
+  //     console.log(error.message)
+  //   } finally {
+  //     setLoading(false);
+  //     setForm({
+  //       fullname: '',
+  //       email: '',
+  //       company: '',
+  //       service: 'AI Development Process Consultation',
+  //       project_details: 'I am interested in learning more about your AI development process for my business.'
+  //     })
+  //     setIsContactModalOpen(false);
+  //   }
+  // }
 
   useGSAP(() => {
     // Fast header animation
