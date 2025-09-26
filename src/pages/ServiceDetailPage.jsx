@@ -101,19 +101,19 @@ const ServiceDetailPage = () => {
       phases: [
         {
           title: 'Assessment & Discovery',
-          duration: '1-2 weeks',
+          // duration: '1-2 weeks',
           description: 'Comprehensive evaluation of current state, capabilities, and opportunities.',
           deliverables: ['Current State Analysis', 'AI Readiness Assessment', 'Opportunity Identification', 'Stakeholder Interviews']
         },
         {
           title: 'Strategy Development',
-          duration: '2-3 weeks',
+          // duration: '2-3 weeks',
           description: 'Development of comprehensive AI strategy and implementation roadmap.',
           deliverables: ['AI Strategy Document', 'Implementation Roadmap', 'ROI Analysis', 'Risk Assessment']
         },
         {
           title: 'Planning & Recommendations',
-          duration: '1 week',
+          // duration: '1 week',
           description: 'Detailed planning and actionable recommendations for implementation.',
           deliverables: ['Detailed Project Plans', 'Resource Requirements', 'Technology Recommendations', 'Success Metrics']
         }
@@ -140,19 +140,19 @@ const ServiceDetailPage = () => {
       phases: [
         {
           title: 'Security Assessment',
-          duration: '1-2 weeks',
+          // duration: '1-2 weeks',
           description: 'Comprehensive security audit and vulnerability assessment.',
           deliverables: ['Security Audit Report', 'Vulnerability Assessment', 'Risk Analysis', 'Compliance Review']
         },
         {
           title: 'AI Integration',
-          duration: '3-4 weeks',
+          // duration: '3-4 weeks',
           description: 'Integration of AI-powered security tools and systems.',
           deliverables: ['AI Security Engine', 'SIEM Integration', 'Automated Response Systems', 'Threat Intelligence']
         },
         {
           title: 'Monitoring & Optimization',
-          duration: '2 weeks',
+          // duration: '2 weeks',
           description: 'Implementation of continuous monitoring and system optimization.',
           deliverables: ['Monitoring Dashboard', 'Alert Systems', 'Performance Reports', 'Optimization Recommendations']
         }
@@ -179,19 +179,19 @@ const ServiceDetailPage = () => {
       phases: [
         {
           title: 'Process Analysis',
-          duration: '2-3 weeks',
+          // duration: '2-3 weeks',
           description: 'Deep analysis of existing processes and automation opportunities.',
           deliverables: ['Process Maps', 'Automation Opportunities', 'ROI Analysis', 'Implementation Plan']
         },
         {
           title: 'AI Development',
-          duration: '4-6 weeks',
+          // duration: '4-6 weeks',
           description: 'Development of AI-powered automation solutions.',
           deliverables: ['AI Models', 'Automation Workflows', 'Integration APIs', 'Testing Results']
         },
         {
           title: 'Deployment & Optimization',
-          duration: '2-3 weeks',
+          // duration: '2-3 weeks',
           description: 'Production deployment and performance optimization.',
           deliverables: ['Production System', 'Monitoring Tools', 'Performance Reports', 'User Training']
         }
@@ -218,19 +218,19 @@ const ServiceDetailPage = () => {
       phases: [
         {
           title: 'Discovery & Planning',
-          duration: '2-3 weeks',
+          // duration: '2-3 weeks',
           description: 'Comprehensive product discovery and development planning.',
           deliverables: ['Product Requirements', 'Technical Architecture', 'Development Roadmap', 'Resource Plan']
         },
         {
           title: 'MVP Development',
-          duration: '4-8 weeks',
+          // duration: '4-8 weeks',
           description: 'Rapid development of minimum viable product.',
           deliverables: ['MVP Product', 'Core Features', 'Testing Suite', 'Documentation']
         },
         {
           title: 'Scaling & Enterprise',
-          duration: '4-6 weeks',
+          // duration: '4-6 weeks',
           description: 'Scaling to enterprise-grade production system.',
           deliverables: ['Production System', 'Scalability Features', 'Security Implementation', 'Deployment Pipeline']
         }
@@ -257,19 +257,19 @@ const ServiceDetailPage = () => {
       phases: [
         {
           title: 'Strategic Assessment',
-          duration: '2-4 weeks',
+          // duration: '2-4 weeks',
           description: 'Comprehensive assessment of technology needs and growth strategy.',
           deliverables: ['Technology Assessment', 'Growth Strategy', 'Architecture Plan', 'Investment Roadmap']
         },
         {
           title: 'Foundation Building',
-          duration: '6-12 weeks',
+          // duration: '6-12 weeks',
           description: 'Building scalable technology foundation and core systems.',
           deliverables: ['Core Platform', 'Scalable Architecture', 'AI Integration', 'Security Framework']
         },
         {
           title: 'Growth & Optimization',
-          duration: '6-12 weeks',
+          // duration: '6-12 weeks',
           description: 'Optimization for scale and continuous improvement.',
           deliverables: ['Performance Optimization', 'Advanced Features', 'Analytics Platform', 'Growth Tools']
         }
@@ -296,19 +296,19 @@ const ServiceDetailPage = () => {
       phases: [
         {
           title: 'Data Assessment',
-          duration: '2-3 weeks',
+          // duration: '2-3 weeks',
           description: 'Comprehensive analysis of data sources and requirements.',
           deliverables: ['Data Audit', 'Architecture Design', 'Requirements Analysis', 'Implementation Plan']
         },
         {
           title: 'Platform Development',
-          duration: '6-8 weeks',
+          // duration: '6-8 weeks',
           description: 'Development of unified data platform and analytics systems.',
           deliverables: ['Data Platform', 'Analytics Engine', 'ML Pipelines', 'Dashboard System']
         },
         {
           title: 'Optimization & Training',
-          duration: '2-4 weeks',
+          // duration: '2-4 weeks',
           description: 'Performance optimization and team training.',
           deliverables: ['Optimized System', 'Training Materials', 'Documentation', 'Support Plan']
         }
@@ -491,14 +491,12 @@ const ServiceDetailPage = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link 
               to="/services"
-              className="bg-white/20 backdrop-blur-sm text-white px-10 py-4 rounded-full font-semibold shadow-2xl hover:shadow-3xl hover:scale-110 hover:bg-white/30 transition-all duration-200 border border-white/30"
-            >
+              className="bg-white/20 backdrop-blur-sm text-white px-10 py-4 rounded-full font-semibold shadow-2xl hover:shadow-3xl hover:scale-110 hover:bg-white/30 transition-all duration-200 border border-white/30">
               Back to Services
             </Link>
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className={`bg-gradient-to-r ${service.color} text-white px-10 py-4 rounded-full font-semibold shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-200`}
-            >
+              className={`bg-gradient-to-r ${service.color} text-white px-10 py-4 rounded-full font-semibold shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-200`}>
               Get Quote & Consultation
             </button>
           </div>
@@ -516,8 +514,7 @@ const ServiceDetailPage = () => {
                 </h3>
                 <button 
                   onClick={() => setIsContactModalOpen(false)} 
-                  className="text-gray-400 hover:text-gray-600 text-2xl hover:scale-110 transition-all duration-200 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
-                >
+                  className="text-gray-400 hover:text-gray-600 text-2xl hover:scale-110 transition-all duration-200 bg-gray-100 hover:bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center" >
                   ×
                 </button>
               </div>

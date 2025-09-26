@@ -93,27 +93,30 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-xl font-bold mb-6">Our Services</h3>
-            <ul className="space-y-3">
-              {[
-                "AI Consultation",
-                "Cybersecurity",
-                "Automation",
-                "Digital Transformation",
-                "Startup Growth",
-                "Custom AI Development"
-              ].map((service, index) => (
-                <li key={index}>
-                  <a href="/services" className="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 transform inline-block">
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <div>
+  <h3 className="text-xl font-bold mb-6">Our Services</h3>
+  <ul className="space-y-3">
+    {[
+      { name: "AI Consultation", path: "/service/ai-consultation-advisory" },
+      { name: "Cybersecurity", path: "/service/cybersecurity-services" },
+      { name: "Automation", path: "/service/ai-automation-digital-transformation" },
+      { name: "Digital Transformation", path: "/service/ai-automation-digital-transformation" },
+      { name: "Startup Growth", path: "/service/startup-growth-acceleration" },
+      { name: "Custom AI Development", path: "/service/data-intelligence-analytics-platform" }
+    ].map((service, index) => (
+      <li key={index}>
+        <a 
+          href={service.path} 
+          className="text-gray-300 hover:text-white transition-colors duration-200 hover:translate-x-1 transform inline-block"
+        >
+          {service.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
 
-          {/* Contact & Newsletter */}
+           {/* Contact */}
           <div>
             <h3 className="text-xl font-bold mb-6">Stay Connected</h3>
             <div className="space-y-4 mb-6">
