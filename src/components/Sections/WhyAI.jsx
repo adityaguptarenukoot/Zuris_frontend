@@ -16,11 +16,11 @@ const WhyAI = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 0.4,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 90%",
           toggleActions: "play none none reverse"
         }
       }
@@ -32,12 +32,12 @@ const WhyAI = () => {
       {
         y: 0,
         opacity: 1,
-        duration: 0.6,
+        duration: 0.4,
         ease: "power2.out",
         stagger: 0.1,
         scrollTrigger: {
           trigger: sectionRef.current.querySelector('.why-cards-container'),
-          start: "top 85%",
+          start: "top 95%",
           toggleActions: "play none none reverse"
         }
       }

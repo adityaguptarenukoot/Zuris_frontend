@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getAllIndustries } from "../data/industriesData";
 import IndustryCard from "../components/common/IndustryCard";
@@ -8,7 +8,7 @@ import IndustryDetailFloat from "../components/common/IndustryDetailFloat";
 
 const IndustryPage = () => {
   const pageRef = useRef(null);
-  const [hoveredIndustry, setHoveredIndustry] = useState(null);
+  const [selectedIndustry, setSelectedIndustry] = useState(null);
   const [floatPosition, setFloatPosition] = useState(null);
   const [isFloatVisible, setIsFloatVisible] = useState(false);
   
@@ -33,19 +33,43 @@ const IndustryPage = () => {
     );
   });
 
-  const handleCardHover = (industry, position) => {
-    setHoveredIndustry(industry);
-    setFloatPosition(position);
-    setIsFloatVisible(true);
+  const handleCardClick = (industry, position) => {
+    if (selectedIndustry?.id === industry.id) {
+      // If clicking the same card, close it
+      handleCloseFloat();
+    } else {
+      // Select new card
+      setSelectedIndustry(industry);
+      setFloatPosition(position);
+      setIsFloatVisible(true);
+    }
   };
 
-  const handleCardLeave = () => {
+  const handleCloseFloat = () => {
     setIsFloatVisible(false);
-    setTimeout(() => {
-      setHoveredIndustry(null);
-      setFloatPosition(null);
-    }, 300); // Delay to allow smooth transition
+    setSelectedIndustry(null);
+    setFloatPosition(null);
   };
+
+  // Handle clicks outside cards to close float
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const isClickOnCard = event.target.closest('.industry-card');
+      const isClickOnFloat = event.target.closest('[data-float-container]');
+      
+      if (!isClickOnCard && !isClickOnFloat && isFloatVisible) {
+        handleCloseFloat();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isFloatVisible]);
 
   return (
     <div ref={pageRef} className="min-h-screen bg-gray-50">
@@ -58,28 +82,49 @@ const IndustryPage = () => {
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
             Discover how we're revolutionizing diverse industries with cutting-edge AI solutions tailored to unique challenges and opportunities.
           </p>
-          <div className="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-md">
-            <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-            <span className="text-sm text-gray-600">Hover over any industry card for detailed insights</span>
-          </div>
+         
         </div>
       </section>
 
       {/* Industries Grid */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry) => (
-              <IndustryCard
-                key={industry.id}
-                industry={industry}
-                onHover={handleCardHover}
-                onLeave={handleCardLeave}
-              />
-            ))}
-          </div>
+  <div className="max-w-7xl mx-auto px-4">
+    {/* Close button when float is visible */}
+    {isFloatVisible && (
+      <div className="mb-8 text-left">
+        <button
+          onClick={handleCloseFloat}
+          className="inline-flex items-center px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors duration-200 animate-fadeInDown"
+        >
+          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          Close Details
+        </button>
+      </div>
+    )}
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {industries.map((industry, index) => (
+        <div
+          key={industry.id}
+          className="industry-card-wrapper"
+          style={{
+            animation: `fadeInUp 0.4s ease-out ${index * 0.05}s both`
+          }}
+        >
+          <IndustryCard
+            industry={industry}
+            onClick={handleCardClick}
+            isSelected={selectedIndustry?.id === industry.id}
+            isOthersSelected={selectedIndustry !== null && selectedIndustry?.id !== industry.id}
+          />
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Additional Info Section */}
       <section className="py-20 bg-white">
@@ -103,11 +148,14 @@ const IndustryPage = () => {
       </section>
 
       {/* Floating Detail Component */}
-      <IndustryDetailFloat
-        industry={hoveredIndustry}
-        position={floatPosition}
-        isVisible={isFloatVisible}
-      />
+      <div data-float-container>
+        <IndustryDetailFloat
+          industry={selectedIndustry}
+          position={floatPosition}
+          isVisible={isFloatVisible}
+          onClose={handleCloseFloat}
+        />
+      </div>
     </div>
   );
 };

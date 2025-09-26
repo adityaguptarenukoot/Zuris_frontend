@@ -104,17 +104,18 @@ const Home = () => {
             and unlock exponential growth for forward-thinking organizations worldwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            {/* FIXED BUG: Changed to="/contact" instead of="/services" */}
-            <Link to="/contact" className="hero-button bg-gradient-to-r from-blue-500 to-purple-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+            
+            <Link to="/contact" className="hero-button bg-gradient-to-r from-blue-500 to-purple-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-150 relative overflow-hidden group">
               <span className="relative z-10">Get Started Today</span>
               {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div> */}
             </Link>
-            <button 
-              onClick={scrollToIndustries}
-              className="hero-button border-2 border-blue-500 text-blue-600 px-10 py-4 rounded-full font-semibold text-lg hover:bg-blue-200 hover:scale-105 transition-all duration-150"
-            >
+            <Link
+              to="/Services"
+              
+              
+              className="hero-button border-2 border-blue-500 text-blue-600 px-10 py-4 rounded-full font-semibold text-lg hover:bg-blue-200 hover:scale-105 transition-all duration-150">
               View Our Services
-            </button>
+            </Link>
           </div>
         </div>
       </main>
@@ -167,8 +168,7 @@ const Home = () => {
           key={index}
           className="service-card bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-160 group cursor-pointer border  relative overflow-hidden bg-gradient-to-br from-blue-50/70 to-purple-50/70 border-blue-200"
           onMouseEnter={(e) => handleServiceHover(e, true)}
-          onMouseLeave={(e) => handleServiceHover(e, false)}
-        >
+          onMouseLeave={(e) => handleServiceHover(e, false)}>
           <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-160"></div>
           
           {/* Icon and Title Row */}
@@ -205,15 +205,13 @@ const Home = () => {
     <div className="mt-12 text-center">
       <Link 
         to="/services" 
-        className="inline-flex items-center text-blue-600 hover:text-blue-500 transition-colors text-lg font-semibold group"
-      >
+        className="inline-flex items-center text-blue-600 hover:text-blue-500 transition-colors text-lg font-semibold group">
         Explore Our Services
         <svg 
           className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" 
           fill="none" 
           stroke="currentColor" 
-          viewBox="0 0 24 24"
-        >
+          viewBox="0 0 24 24" >
           <path 
             strokeLinecap="round" 
             strokeLinejoin="round" 

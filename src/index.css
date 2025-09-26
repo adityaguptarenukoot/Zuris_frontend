@@ -50,3 +50,22 @@ body {
   }
 }
 
+/* Add this to your main CSS file for better text truncation */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Ensure smooth transitions */
+.industry-card {
+  transform-origin: center;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .industry-card {
+    min-height: 280px;
+  }
+}

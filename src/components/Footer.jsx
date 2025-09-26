@@ -32,8 +32,8 @@ const Footer = () => {
     { name: "Services", path: "/services" },
     { name: "About Us", path: "/about" },
     { name: "Contact", path: "/contact" },
-    { name: "Case Studies", path: "/" },
-    { name: "Industry", path: "/industries" }
+    // { name: "Case Studies", path: "/" },
+    { name: "Industries", path: "/industries" }
   ];
 
   const socialMedia = [

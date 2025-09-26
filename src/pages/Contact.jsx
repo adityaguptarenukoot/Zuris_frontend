@@ -88,6 +88,7 @@ const submithandler = async (e) => {
                     <option value={"Collaborative Development"}>Collaborative Development</option>
                     <option value={"Startup Growth & Acceleration"}>Startup Growth & Acceleration</option>
                     <option value={"Data Intelligence & Analytics Platform"}>Data Intelligence & Analytics Platform</option>
+                    <option value={"Other"}>Other</option>
             </select>
           </div>
           

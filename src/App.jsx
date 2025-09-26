@@ -15,6 +15,9 @@ import Services from './components/Services';
 import Navigation from './components/Navigation';
 import OurPurpose from './components/Sections/OurPurpose';
 import IndustryPage from './pages/IndustryPage';
+import ProcessPage from './pages/ProcessPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
+
 
 
 
@@ -76,6 +79,9 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/industry/:industryName" element={<IndustryDetail />} />
             <Route path="/key-differentiators" element={<OurPurpose />} />
+            <Route path="/process" element={<ProcessPage />} />
+            <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
+
           </Routes>
         </div>
         <Footer />
