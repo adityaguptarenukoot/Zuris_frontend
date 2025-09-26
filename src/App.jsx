@@ -17,6 +17,7 @@ import OurPurpose from './components/Sections/OurPurpose';
 import IndustryPage from './pages/IndustryPage';
 
 
+
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 

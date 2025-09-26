@@ -27,6 +27,23 @@ const Footer = () => {
     );
   });
 
+  const quickLinks = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Case Studies", path: "/" },
+    { name: "Industry", path: "/industries" }
+  ];
+
+  const socialMedia = [
+      { Icon: FaFacebookF, href: "#", label: "Facebook" },
+      { Icon: FaTwitter, href: "#", label: "Twitter" },
+      { Icon: FaInstagram, href: "#", label: "Instagram" },
+      { Icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+      { Icon: FaYoutube, href: "#", label: "YouTube" },
+  ]
+
   return (
     <footer ref={footerRef} className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
@@ -44,13 +61,7 @@ const Footer = () => {
               Transforming businesses with intelligent AI solutions.
             </p>
             <div className="flex space-x-4">
-              {[
-                { Icon: FaFacebookF, href: "#", label: "Facebook" },
-                { Icon: FaTwitter, href: "#", label: "Twitter" },
-                { Icon: FaInstagram, href: "#", label: "Instagram" },
-                { Icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-                { Icon: FaYoutube, href: "#", label: "YouTube" },
-              ].map(({ Icon, href, label }, index) => (
+              {socialMedia.map(({ Icon, href, label }, index) => (
                 <a
                   key={index}
                   href={href}
@@ -67,14 +78,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {[
-                { name: "Home", path: "/" },
-                { name: "Services", path: "/services" },
-                { name: "About Us", path: "/about" },
-                { name: "Contact", path: "/contact" },
-                { name: "Case Studies", path: "/" },
-                { name: "Blog", path: "#" }
-              ].map((link, index) => (
+              {quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link 
                     to={link.path} 
@@ -123,6 +127,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-blue-400" />
                 <span className="text-gray-300">Baner, Pune</span>
+                
                 <span className="text-gray-300">Noida</span>
               </div>
             </div>

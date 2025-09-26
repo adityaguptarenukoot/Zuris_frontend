@@ -124,7 +124,7 @@ const Home = () => {
 <section ref={servicesRef} className="py-20 bg-white/80 backdrop-blur-sm relative">
   <div className="max-w-7xl mx-auto px-4">
     <h2 className="services-title text-5xl font-bold text-center mb-6 text-gray-800">
-      Our Core Capabilities
+      Our Core Services
     </h2>
     <p className="text-xl text-center mb-16 text-gray-600 max-w-3xl mx-auto">
       Three pillars of AI excellence that drive business transformation
