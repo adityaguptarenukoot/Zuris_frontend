@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import BackgroundVisuals from "../components/BackgroundVisuals";
 
-export const backendUrl = "https://zuris-backend.vercel.app/";
+export const backendUrl = "https://zuris-backend.vercel.app";
 
 const Contact = () => {
 
