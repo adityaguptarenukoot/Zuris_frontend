@@ -12,7 +12,7 @@ const Services = () => {
     gsap.from(headerRef.current, {
       y: 100,
       opacity: 0,
-      duration: 1.2,
+      duration: 0.2,
       ease: "power3.out"
     });
 
@@ -22,12 +22,12 @@ const Services = () => {
         y: 0,
         opacity: 1,
         rotationX: 0,
-        duration: 0.8,
+        duration: 0.3,
         ease: "power2.out",
         stagger: 0.2,
         scrollTrigger: {
           trigger: servicesRef.current,
-          start: "top 80%",
+          start: "top 90%",
           toggleActions: "play none none reverse"
         }
       }

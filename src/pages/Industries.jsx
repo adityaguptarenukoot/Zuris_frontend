@@ -43,14 +43,12 @@ const IndustriesServed = () => {
             {industries.map((industry, index) => (
               <div 
                 key={industry.id}
-                className="industry-card group p-3 rounded-lg border-2 border-gray-200 hover:border-blue-600 hover:bg-blue-50 transition-all flex flex-col items-center justify-center"
-              >
+                className="industry-card group p-3 rounded-lg border-2 border-gray-200 hover:border-blue-600 hover:bg-blue-50 transition-all flex flex-col items-center justify-center">
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
                   <img 
                     src={industry.image} 
                     className="w-10 h-10 mx-auto" 
-                    alt={`${industry.name} Icon`}
-                  />
+                    alt={`${industry.name} Icon`}/>
                 </div>
                 <div className="font-medium text-sm text-gray-800 group-hover:text-blue-600 text-center">
                   {industry.name}

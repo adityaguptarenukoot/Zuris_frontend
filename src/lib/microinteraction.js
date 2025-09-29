@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
  function useMicroInteractions() {
   useEffect(() => {
-    // Animate buttons: scale on hover, press effect on click
+    // Animate buttons
     gsap.utils.toArray('button, a.button-like, .btn').forEach((btn) => {
       gsap.set(btn, { transformOrigin: 'center center' });
       
@@ -42,7 +42,7 @@ import { useEffect } from "react";
       });
     });
 
-    // Animate inputs: glow on focus
+    // Animate inputs
     gsap.utils.toArray('input, textarea, select').forEach((input) => {
       input.addEventListener('focus', () => {
         gsap.to(input, { boxShadow: '0 0 10px 2px rgba(79, 70, 229, 0.6)', duration: 0.3, ease: 'power1.out' });
@@ -52,7 +52,7 @@ import { useEffect } from "react";
       });
     });
 
-    // Animate nav icons & hamburger button
+   
     const navIcons = gsap.utils.toArray('.nav-icon, .hamburger-btn');
     navIcons.forEach(icon => {
       icon.addEventListener('mouseenter', () => {

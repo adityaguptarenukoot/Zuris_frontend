@@ -98,9 +98,9 @@ const ProcessPage = () => {
     {
       title: "Discover & Strategize",
       subtitle: "Strategic AI Planning & Assessment",
-      icon: "/images/strategy.jpg",
+      icon: "/images/discovery.png",
       color: "from-blue-500 to-purple-600",
-      shadowColor: "shadow-blue-500/30",
+      shadowColor: "shadow-white",
       deliverables: "AI Strategy Document, Technical Roadmap, ROI Analysis",
       description: "We begin with a comprehensive analysis of your business challenges, existing infrastructure, and AI opportunity mapping to create a strategic foundation.",
       steps: [
@@ -129,7 +129,7 @@ const ProcessPage = () => {
     {
       title: "Co-Develop & Co-Create",
       subtitle: "Collaborative AI Model Development",
-      icon: "/images/build.jpg",
+      icon: "/images/enablement.png",
       color: "from-green-500 to-teal-500",
       shadowColor: "shadow-green-500/30",
     //   duration: "6-12 weeks",
@@ -161,7 +161,7 @@ const ProcessPage = () => {
     {
       title: "Deploy & Scale",
       subtitle: "Production Deployment & Optimization",
-      icon: "/images/deploy.jpg",
+      icon: "/images/deployment.png",
       color: "from-orange-500 to-red-500",
       shadowColor: "shadow-orange-500/30",
     //   duration: "4-8 weeks",
@@ -231,7 +231,7 @@ const ProcessPage = () => {
                       <img 
                         src={process.icon}
                         alt={process.title}
-                        className="w-12 h-12 rounded-lg object-cover"
+                        className="w-16 h-16 rounded-lg object-cover"
                       />
                     </div>
                     <div className="flex-1">

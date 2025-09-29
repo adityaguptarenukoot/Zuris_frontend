@@ -20,15 +20,15 @@ const KeyDifferentiators = () => {
   // Animation ref
   const sectionRef = useRef(null);
 
-  // GSAP animations - Optimized for faster loading
+  // GSAP animations 
   useGSAP(() => {
-    // Animate headline - Keep existing timing
+    // Animate headline
     gsap.fromTo(sectionRef.current.querySelector('.hero-headline'),
       { y: 100, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1.2, // Keep original duration as requested
+        duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -38,18 +38,18 @@ const KeyDifferentiators = () => {
       }
     );
 
-    // Faster card animations
+    
     gsap.fromTo(sectionRef.current.querySelectorAll('.differentiator-card'),
-      { y: 30, opacity: 0 }, // Reduced movement from 50 to 30
+      { y: 30, opacity: 0 }, 
       {
         y: 0,
         opacity: 1,
-        duration: 0.4, // Much faster - reduced from 0.8
+        duration: 0.4, 
         ease: "power2.out",
-        stagger: 0.08, // Reduced stagger from 0.15 to 0.08
+        stagger: 0.08, 
         scrollTrigger: {
           trigger: sectionRef.current.querySelector('.differentiators-container'),
-          start: "top 95%", // Start earlier - changed from 90% to 95%
+          start: "top 95%", 
           toggleActions: "play none none reverse"
         }
       }
@@ -84,7 +84,7 @@ const KeyDifferentiators = () => {
     }
   }
 
-  // Updated differentiators to match client's requirements
+  
   const differentiators = [
     {
       id: 1,
@@ -123,15 +123,14 @@ const KeyDifferentiators = () => {
           </p>
         </div>
 
-        {/* Updated 3-Column Grid Layout */}
+        {/* 3-Column Grid Layout */}
         <div className="differentiators-container grid md:grid-cols-3 gap-8">
           {differentiators.map((item, index) => (
             <div key={item.id} className="differentiator-card p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300">
-              {/* Icon with white background and rounded corners */}
               <div className="text-4xl mb-4">
                 <img 
                   src={item.image}
-                  className="w-12 h-12 mx-auto mb-6 rounded-lg"
+                  className="w-16 h-16 mx-auto mb-6 rounded-lg"
                   style={{ backgroundColor: 'white', borderRadius: '10px' }}
                   alt={`${item.title} Icon`}
                 />

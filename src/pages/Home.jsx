@@ -68,8 +68,8 @@ const Home = () => {
     const icon = card.querySelector('.service-icon');
     
     if (isHover) {
-      gsap.to(card, { y: -5, duration: 0.1, ease: "power2.out" }); // Reduced movement and faster
-      gsap.to(icon, { scale: 1.1, duration: 0.2, ease: "power2.out" }); // Simplified animation
+      gsap.to(card, { y: -5, duration: 0.1, ease: "power2.out" }); 
+      gsap.to(icon, { scale: 1.1, duration: 0.2, ease: "power2.out" }); 
     } else {
       gsap.to(card, { y: -1, duration: 0.1, ease: "power2.out" });
       gsap.to(icon, { scale: 1, duration: 0.2, ease: "power2.out" });

@@ -3,7 +3,7 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import aiProcessSteps from '../data/aiProcessSteps'; // <-- Import your steps data
+import aiProcessSteps from '../data/aiProcessSteps'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +35,7 @@ const AIDevProcess = () => {
       {/* Background with your startup growth image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
-        style={{ backgroundImage: `url('/images/startup-growth.jpg')` }}
-      ></div>
+        style={{ backgroundImage: `url('/images/startup-growth.jpg')` }} ></div>
       
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">

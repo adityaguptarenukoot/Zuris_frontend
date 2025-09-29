@@ -93,14 +93,14 @@ const AiDevProcess = () => {
           </p>
         </div>
 
-        {/* Process Flow - 3 Cards Grid with Arrows */}
+        {/* Process Flow  */}
         <div className="relative mb-12">
           <div className="grid md:grid-cols-3 gap-8 relative">
             {processes.map((process, index) => (
               <div key={index} className="relative">
                 <ProcessCard process={process} index={index} />
                 
-                {/* Connecting Arrows - Only between cards, not after the last one */}
+                {/* Connecting Arrows  */}
                 {index < processes.length - 1 && (
                   <>
                     {/* Desktop Arrow */}
@@ -142,7 +142,7 @@ const AiDevProcess = () => {
           </Link>
         </div>
 
-        {/* CTA Section with Light Background */}
+        {/* CTA Section  */}
         <div className="cta-section mt-20 pt-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl px-8 py-12 relative overflow-hidden border border-blue-100">
           {/* Light Background Effects */}
           <div className="absolute inset-0 opacity-20">
@@ -200,7 +200,7 @@ const ProcessCard = ({ process, index }) => {
         <h3 className="text-2xl font-bold text-gray-800 mb-4">{process.title}</h3>
         <p className="text-gray-600">{process.description}</p>
         
-        {/* Hover Effect */}
+        
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
     </div>

@@ -100,8 +100,8 @@ const OurPurpose = () => {
     {
       title: "Data-First Strategic Framework",
       desc: "Architect comprehensive strategies aligned with business objectives, market positioning, and organizational capabilities for sustainable competitive advantage.",
-      iconImage: "/images/data_strategy.jpg",
-      iconBg: "from-blue-500 to-cyan-500",
+      iconImage: "/images/datafirststrategy.png",
+      iconBg: "from-white to-cyan-100",
       shadowColor: "hover:shadow-blue-500/75",
       features: [
         "Process billions of data points instantaneously to optimize operations",
@@ -113,8 +113,8 @@ const OurPurpose = () => {
     {
       title: "Enterprise Data Ecosystem", 
       desc: "Transform disparate data sources into unified strategic assets that drive decision-making, operational efficiency, and customer intelligence.",
-      iconImage: "/images/ai_solution.jpg",
-      iconBg: "from-purple-500 to-pink-500",
+      iconImage: "/images/ecosystem.png",
+      iconBg: "from-white to-pink-100",
       shadowColor: "hover:shadow-purple-500/75",
       features: [
         "Leverage advanced machine learning models for predictive insights",
@@ -126,8 +126,8 @@ const OurPurpose = () => {
     {
       title: "Continuous Innovation Engine",
       desc: "Establish ongoing optimization frameworks through advanced model retraining, performance monitoring, and adaptive learning systems.",
-      iconImage: "/images/innovation.jpg",
-      iconBg: "from-green-500 to-teal-500",
+      iconImage: "/images/contineous.png",
+      iconBg: "from-white to-teal-100",
       shadowColor: "hover:shadow-green-500/75",
       features: [
         "Replace costly manual workflows with sophisticated automation",
@@ -188,7 +188,7 @@ const OurPurpose = () => {
                     <img 
                       src={item.iconImage}
                       alt={item.title}
-                      className="w-12 h-12 rounded-lg object-cover shadow-lg"
+                      className="w-16 h-16 rounded-lg object-cover shadow-lg"
                     />
                   </div>
                 </div>
