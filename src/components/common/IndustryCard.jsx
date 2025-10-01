@@ -72,11 +72,11 @@ const IndustryCard = ({ industry, onClick, isSelected, isOthersSelected }) => {
               {feature}
             </span>
           ))}
-          {industry.keyFeatures.length > 2 && (
+          {/* {industry.keyFeatures.length > 2 && (
             <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
               +{industry.keyFeatures.length - 2} more
             </span>
-          )}
+          )} */}
         </div>
       </div>
 

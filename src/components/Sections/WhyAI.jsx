@@ -68,7 +68,7 @@ const WhyAI = () => {
   return (
     <>
       {/* Optimized CSS for faster hover effects */}
-      <style jsx>{`
+      <style jsx="true">{`
         .card-hover {
           transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
                       box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);

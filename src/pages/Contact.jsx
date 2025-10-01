@@ -32,16 +32,15 @@ const Contact = () => {
         return;
       }
 
-      const response = await axios.post(
-        backendUrl + '/api/form/submit', 
-        { fullname, email, company, service, project_details, phoneNumber },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          timeout: 10000, // 10 second timeout
-        }
+      const response = await axios.post(backendUrl + '/api/form/submit', { fullname, email, company, service, project_details, phoneNumber },
+        // {
+        //   headers: {
+        //     'Content-Type': 'application/json',
+        //   },
+        //   timeout: 10000, // 10 second timeout
+        // }
       );
+      console.log(response)
       
       if (response.data.success) {
         alert("Message sent successfully! We'll contact you within 48 hours.");
@@ -51,7 +50,7 @@ const Contact = () => {
         console.log(response.data.message);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:", error.message);
       
       if (error.code === 'ECONNABORTED') {
         alert("Request timed out. Please check your connection and try again.");

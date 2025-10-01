@@ -7,7 +7,7 @@ import BackgroundVisuals from "../components/BackgroundVisuals";
 import KeyDifferentiators from "../components/Sections/KeyDifferentiators";
 import HowWeWork from "../components/HowWeWork";
 import AiDevProcess from "../components/Sections/AiDevProcess";
-import WhyAI from "../components/Sections/WhyAI";
+// import WhyAI from "../components/Sections/WhyAI";
 
 const Home = () => {
   const heroRef = useRef(null);
@@ -112,6 +112,8 @@ const Home = () => {
           </div>
         </div>
       </main>
+
+      <HowWeWork />
 
       {/* Core Services Preview */}
       <section ref={servicesRef} className="py-20 bg-white/80 backdrop-blur-sm relative">
@@ -220,8 +222,8 @@ const Home = () => {
       <div ref={industriesRef}>
         <IndustriesServed />
       </div>
-      <HowWeWork />
-      <WhyAI />
+      {/* <HowWeWork /> */}
+      {/* <WhyAI /> */}
       <AiDevProcess />
     </div>
   );
