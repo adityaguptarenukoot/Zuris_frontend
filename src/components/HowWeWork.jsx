@@ -44,12 +44,12 @@ const HowWeWork = () => {
 
   const steps = [
     {
-      title: "Define Bold Strategy",
+      title: "Data Discovery and Strategy",
       description: "We align comprehensive AI strategies with your business objectives and organizational capabilities.",
       iconPath: "/images/strategy.png"
     },
     {
-      title: "Build Data Ecosystems",
+      title: "Create Ecosystem",
       description: "Transform raw data into strategic assets by creating unified data architectures.",
       iconPath: "/images/ecosystem.png"
     },
@@ -67,6 +67,11 @@ const HowWeWork = () => {
       title: "Enable Your Team",
       description: "Provide comprehensive training and change management support for long-term success.",
       iconPath: "/images/group.png"
+    },
+     {
+      title: "Co-Create Strategy",
+      description: "We align comprehensive AI strategies with your business objectives and organizational capabilities.",
+      iconPath: "/images/strategy.png"
     }
   ];
 
@@ -75,14 +80,14 @@ const HowWeWork = () => {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            How Zurix Empowers You to Lead the <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">AI-Driven Future</span>
+            Zurix custom <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">defined process execution </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          {/* <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             We partner with you to transform your organization into an AI-powered industry leader through strategic implementation and continuous innovation.
-          </p>
+          </p> */}
         </div>
 
-        {/* Process Flow - Equal Height Grid Layout */}
+        {/* Process Flow */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 auto-rows-fr">
           {steps.map((step, index) => (
             <WorkCard key={index} step={step} index={index} />

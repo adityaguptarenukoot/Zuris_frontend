@@ -84,24 +84,23 @@ const Home = () => {
       <main ref={heroRef} className="py-20 text-center relative overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
-          style={{ backgroundImage: `url('/images/ai-consultation.jpg')` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-purple-50/90"></div>
+          style={{ backgroundImage: `url('/images/ai-consultation.jpg')` }}>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-purple-50/60"></div>
         
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <h1 className="hero-title text-6xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-blue-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              Transform Your Business
+              Transform Business
             </span>
             <br />
             <span className="text-gray-800">with AI Excellence</span>
           </h1>
           <p className="hero-subtitle text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Zurix delivers cutting-edge AI solutions that drive innovation, automate processes, 
-            and unlock exponential growth for forward-thinking organizations worldwide.
+              Zurix creates “new to the world” products and services, unlocking new business opportunities.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/contact" className="hero-button bg-gradient-to-r from-blue-500 to-purple-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-200 relative overflow-hidden group">
+            <Link to="/contact" className="hero-button bg-gradient-to-r from-blue-500 to-purple-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-50 relative overflow-hidden group">
               <span className="relative z-10">Get Started Today</span>
             </Link>
             <Link
@@ -122,13 +121,13 @@ const Home = () => {
             Our Core Services
           </h2>
           <p className="text-xl text-center mb-16 text-gray-600 max-w-3xl mx-auto">
-            Three pillars of AI excellence that drive business transformation
+            AI execution for business transformation 
           </p>
           
           <div className="services-grid grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "AI Strategy & Advisory",
+                title: "AI Consultation and advisory ",
                 desc: "Strategic roadmaps that align AI initiatives with business objectives, ensuring maximum ROI and competitive advantage.",
                 image: "/images/ai_strategy.png", 
                 features: [
@@ -138,7 +137,7 @@ const Home = () => {
                 ]
               },
               {
-                title: "AI Automation & Transformation", 
+                title: "AI Cyber security ", 
                 desc: "End-to-end automation solutions that eliminate inefficiencies and unlock exponential productivity gains.",
                 image: "/images/ai_transformation.png",
                 features: [
@@ -148,7 +147,7 @@ const Home = () => {
                 ]
               },
               {
-                title: "Collaborative Development",
+                title: "Custom AI solutions",
                 desc: "Partnership-driven approach where your team gains AI expertise while we deliver cutting-edge solutions.",
                 image: "/images/collaborative_development.png", 
                 features: [

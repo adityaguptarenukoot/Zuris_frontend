@@ -15,7 +15,7 @@ const Contact = () => {
     company: "",
     service: "",
     project_details: "",
-    phoneNumber: "" // Added missing phoneNumber field
+    phoneNumber: "" 
   });
 
   const submithandler = async (e) => {
@@ -33,12 +33,7 @@ const Contact = () => {
       }
 
       const response = await axios.post(backendUrl + '/api/form/submit', { fullname, email, company, service, project_details, phoneNumber },
-        // {
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        //   timeout: 10000, // 10 second timeout
-        // }
+       
       );
       console.log(response)
       
@@ -150,8 +145,8 @@ const Contact = () => {
               <select 
                 value={form.service} 
                 onChange={(e) => setForm({...form, service: e.target.value})} 
-                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
+                className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              
                 <option value="">Select a service</option>
                 <option value="AI Consultation & Advisory">AI Consultation & Advisory</option>
                 <option value="Cybersecurity Services">Cybersecurity Services</option>
@@ -180,9 +175,8 @@ const Contact = () => {
             <button 
               disabled={loading} 
               type="submit" 
-              className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? "Sending..." : "Send Message & Schedule Consultation"}
+              className="w-full px bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+              {loading ? "Sending..." : "Submit & Book Consultation"}
             </button>
           </form>
         </div>

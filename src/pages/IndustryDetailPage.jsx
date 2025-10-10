@@ -284,8 +284,173 @@ const IndustryDetailPage = () => {
         'Carbon footprint optimization',
         'Energy trading automation'
       ]
+    },
+    'transportation': {
+      name: 'Transportation',
+      title: 'Transportation & Logistics AI',
+      subtitle: 'Intelligent Mobility Solutions for Modern Transport',
+      image: '/images/transportation.jpg',
+      color: 'from-cyan-500 to-blue-500',
+      description: 'Transform transportation and logistics operations with AI-driven route optimization, fleet management, and predictive analytics.',
+      solutions: [
+        {
+          title: 'Route Optimization AI',
+          description: 'Advanced algorithms that optimize delivery routes in real-time, reducing fuel costs and delivery times.',
+          features: ['Dynamic Route Planning', 'Traffic Prediction', 'Multi-stop Optimization', 'Real-time Rerouting']
+        },
+        {
+          title: 'Fleet Management Systems',
+          description: 'Comprehensive AI solutions for monitoring, managing, and optimizing entire vehicle fleets.',
+          features: ['Vehicle Tracking', 'Driver Performance Monitoring', 'Fuel Efficiency Analysis', 'Maintenance Scheduling']
+        },
+        {
+          title: 'Demand Forecasting',
+          description: 'Predictive models that forecast transportation demand and optimize resource allocation.',
+          features: ['Demand Prediction', 'Capacity Planning', 'Load Optimization', 'Seasonal Analysis']
+        }
+      ],
+      benefits: [
+        '25% reduction in fuel consumption',
+        '35% faster delivery times',
+        'Improved fleet utilization by 40%',
+        'Enhanced customer satisfaction',
+        'Reduced operational costs',
+        'Lower carbon emissions'
+      ],
+      useCases: [
+        'Last-mile delivery optimization',
+        'Fleet performance monitoring',
+        'Traffic management systems',
+        'Supply chain logistics',
+        'Public transportation optimization',
+        'Warehouse-to-delivery coordination'
+      ]
+    },
+    'telecommunications': {
+      name: 'Telecommunications',
+      title: 'Telecom AI Solutions',
+      subtitle: 'Next-Generation Network Intelligence',
+      image: '/images/telecommunication.png',
+      color: 'from-pink-500 to-rose-500',
+      description: 'Enhance telecommunications infrastructure with AI-powered network optimization, customer service automation, and predictive maintenance.',
+      solutions: [
+        {
+          title: 'Network Optimization AI',
+          description: 'Self-optimizing networks that automatically adjust to traffic patterns and performance issues.',
+          features: ['Traffic Management', 'Bandwidth Optimization', 'Coverage Enhancement', 'Network Planning']
+        },
+        {
+          title: 'Intelligent Customer Support',
+          description: 'AI-powered chatbots and virtual assistants that provide 24/7 customer service.',
+          features: ['AI Chatbots', 'Natural Language Processing', 'Sentiment Analysis', 'Automated Ticketing']
+        },
+        {
+          title: 'Predictive Network Maintenance',
+          description: 'Machine learning models that predict network failures before they impact customers.',
+          features: ['Anomaly Detection', 'Failure Prediction', 'Preventive Maintenance', 'Performance Monitoring']
+        }
+      ],
+      benefits: [
+        '50% improvement in network uptime',
+        '60% reduction in customer churn',
+        'Automated fraud detection and prevention',
+        '80% faster issue resolution',
+        'Enhanced customer experience',
+        'Reduced operational expenses'
+      ],
+      useCases: [
+        'Self-optimizing 5G networks',
+        'AI-powered customer service',
+        'Network traffic prediction',
+        'Fraud detection systems',
+        'Subscriber behavior analysis',
+        'Service quality monitoring'
+      ]
+    },
+    'education': {
+      name: 'Education',
+      title: 'Education AI Solutions',
+      subtitle: 'Personalized Learning, Empowered Education',
+      image: '/images/education.jpg',
+      color: 'from-indigo-500 to-purple-500',
+      description: 'Revolutionize educational experiences with AI-driven personalized learning, student analytics, and intelligent assessment systems.',
+      solutions: [
+        {
+          title: 'Personalized Learning Paths',
+          description: 'Adaptive learning systems that customize educational content based on individual student needs and progress.',
+          features: ['Adaptive Learning', 'Skill Gap Analysis', 'Learning Pace Adjustment', 'Content Recommendations']
+        },
+        {
+          title: 'AI Tutoring Systems',
+          description: 'Intelligent tutoring systems that provide personalized guidance and instant feedback to students.',
+          features: ['24/7 Virtual Tutoring', 'Real-time Feedback', 'Interactive Learning', 'Progress Tracking']
+        },
+        {
+          title: 'Student Performance Analytics',
+          description: 'Advanced analytics platforms that identify at-risk students and optimize learning outcomes.',
+          features: ['Performance Prediction', 'Engagement Analysis', 'Early Warning Systems', 'Learning Pattern Recognition']
+        }
+      ],
+      benefits: [
+        '35% improvement in learning outcomes',
+        'Personalized education for every student',
+        '50% reduction in administrative workload',
+        'Early identification of at-risk students',
+        'Enhanced student engagement',
+        'Data-driven educational insights'
+      ],
+      useCases: [
+        'Adaptive e-learning platforms',
+        'Intelligent tutoring systems',
+        'Automated essay and assignment grading',
+        'Student engagement tracking',
+        'Curriculum optimization',
+        'Special education support systems'
+      ]
+    },
+    'retail': {
+      name: 'Retail',
+      title: 'Retail & E-commerce AI',
+      subtitle: 'Personalized Shopping, Maximized Revenue',
+      image: '/images/retail.jpg',
+      color: 'from-red-500 to-pink-500',
+      description: 'Transform retail operations with AI-powered personalization, inventory optimization, and customer insights.',
+      solutions: [
+        {
+          title: 'Personalized Recommendations',
+          description: 'AI-driven recommendation engines that increase sales conversion and customer satisfaction.',
+          features: ['Product Recommendations', 'Cross-sell Optimization', 'Personalized Marketing', 'Customer Segmentation']
+        },
+        {
+          title: 'Smart Inventory Management',
+          description: 'Predictive systems that optimize stock levels and reduce inventory costs.',
+          features: ['Demand Forecasting', 'Auto-replenishment', 'Warehouse Optimization', 'Supply Chain Integration']
+        },
+        {
+          title: 'Customer Behavior Analytics',
+          description: 'Deep learning models that analyze customer behavior and predict purchasing patterns.',
+          features: ['Behavioral Analysis', 'Sentiment Tracking', 'Churn Prediction', 'Lifetime Value Prediction']
+        }
+      ],
+      benefits: [
+        '40% increase in sales conversion',
+        '30% reduction in inventory costs',
+        'Enhanced customer engagement',
+        'Optimized pricing strategies',
+        'Improved customer retention',
+        'Data-driven merchandising decisions'
+      ],
+      useCases: [
+        'Product recommendation engines',
+        'Visual search technology',
+        'Dynamic pricing optimization',
+        'Customer sentiment analysis',
+        'Demand forecasting systems',
+        'Cashier-less store technology'
+      ]
     }
   };
+
 
   const industry = industryData[industrySlug];
 
@@ -403,14 +568,14 @@ const IndustryDetailPage = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link 
               to="/"
-              className="bg-white/20 text-white px-8 py-3 rounded-full font-semibold shadow-xl"
-            >
+              className="bg-white/20 text-white px-8 py-3 rounded-full font-semibold shadow-xl">
+            
               Back to Homepage
             </Link>
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold shadow-2xl"
-            >
+              className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full font-semibold shadow-2xl">
+            
               Get Started
             </button>
           </div>

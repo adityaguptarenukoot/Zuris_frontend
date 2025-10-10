@@ -12,6 +12,7 @@ const IndustryCard = ({ industry, onClick, isSelected, isOthersSelected }) => {
       cardHeight: rect.height
     };
     onClick(industry, position);
+    
   };
 
   return (
@@ -24,8 +25,8 @@ const IndustryCard = ({ industry, onClick, isSelected, isOthersSelected }) => {
           ? 'border-gray-100 opacity-50' 
           : 'border-gray-100 hover:border-blue-200'
       }`}
-      onClick={handleClick}
-    >
+      onClick={handleClick}>
+    
       {/* Selection indicator */}
       {isSelected && (
         <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
@@ -37,13 +38,11 @@ const IndustryCard = ({ industry, onClick, isSelected, isOthersSelected }) => {
 
       {/* Industry Image */}
       <div className={`w-16 h-16 mx-auto mb-4 transition-transform duration-300 ${
-        isSelected ? 'scale-110' : 'group-hover:scale-110'
-      }`}>
+        isSelected ? 'scale-110' : 'group-hover:scale-110'}`}>
         <img 
           src={industry.image} 
           alt={`${industry.name} Icon`}
-          className="w-full h-full object-contain"
-        />
+          className="w-full h-full object-contain"/>
       </div>
 
       {/* Industry Name */}

@@ -1,16 +1,16 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAllIndustries } from "../data/industriesData";
 import IndustryCard from "../components/common/IndustryCard";
-import IndustryDetailFloat from "../components/common/IndustryDetailFloat";
 
 const IndustryPage = () => {
   const pageRef = useRef(null);
   const [selectedIndustry, setSelectedIndustry] = useState(null);
-  const [floatPosition, setFloatPosition] = useState(null);
+  const [setFloatPosition] = useState(null);
   const [isFloatVisible, setIsFloatVisible] = useState(false);
+  const navigate = useNavigate();
   
   const industries = getAllIndustries();
 
@@ -34,15 +34,15 @@ const IndustryPage = () => {
   });
 
   const handleCardClick = (industry, position) => {
-    if (selectedIndustry?.id === industry.id) {
-      // If clicking the same card, close it
-      handleCloseFloat();
-    } else {
-      // Select new card
-      setSelectedIndustry(industry);
-      setFloatPosition(position);
-      setIsFloatVisible(true);
-    }
+
+      const industrySlug = industry.name.toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/&/g, '')
+      .replace(/--+/g, '-');
+    
+    setTimeout(() => {
+      navigate(`/industry/${industrySlug}`);
+    }, 300); 
   };
 
   const handleCloseFloat = () => {
@@ -69,7 +69,7 @@ const IndustryPage = () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('touchstart', handleClickOutside);
     };
-  }, [isFloatVisible]);
+  });
 
   return (
     <div ref={pageRef} className="min-h-screen bg-gray-50">
@@ -94,8 +94,8 @@ const IndustryPage = () => {
       <div className="mb-8 text-left">
         <button
           onClick={handleCloseFloat}
-          className="inline-flex items-center px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors duration-200 animate-fadeInDown"
-        >
+          className="inline-flex items-center px-4 py-2 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors duration-200 animate-fadeInDown">
+        
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -111,14 +111,13 @@ const IndustryPage = () => {
           className="industry-card-wrapper"
           style={{
             animation: `fadeInUp 0.4s ease-out ${index * 0.05}s both`
-          }}
-        >
+          }}>
+        
           <IndustryCard
             industry={industry}
             onClick={handleCardClick}
             isSelected={selectedIndustry?.id === industry.id}
-            isOthersSelected={selectedIndustry !== null && selectedIndustry?.id !== industry.id}
-          />
+            isOthersSelected={selectedIndustry !== null && selectedIndustry?.id !== industry.id}/>
         </div>
       ))}
     </div>
@@ -137,8 +136,8 @@ const IndustryPage = () => {
           </p>
           <Link 
             to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:scale-105 transition-transform duration-300"
-          >
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:scale-105 transition-transform duration-300">
+          
             Discuss Your Industry
             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -147,17 +146,10 @@ const IndustryPage = () => {
         </div>
       </section>
 
-      {/* Floating Detail Component */}
-      <div data-float-container>
-        <IndustryDetailFloat
-          industry={selectedIndustry}
-          position={floatPosition}
-          isVisible={isFloatVisible}
-          onClose={handleCloseFloat}
-        />
-      </div>
+      
     </div>
   );
 };
 
 export default IndustryPage;
+

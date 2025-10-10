@@ -81,6 +81,7 @@ function App() {
             <Route path="/key-differentiators" element={<OurPurpose />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
+            <Route path="/industries/:slug" element={<IndustryDetail />} />
 
           </Routes>
         </div>

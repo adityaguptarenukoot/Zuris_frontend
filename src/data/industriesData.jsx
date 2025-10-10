@@ -1,10 +1,11 @@
+
 export const industriesData = [
   {
     id: 1,
     name: "Finance",
     slug: "finance",
     image: "/images/finance.png",
-    brief: "Transform financial services with AI-powered risk assessment, fraud detection, and automated trading systems.",
+    brief: "Transform financial services with AI-powered risk assessment and fraud detection.",
     description: "Revolutionize your financial operations with cutting-edge AI solutions that enhance decision-making, reduce risk, and improve customer experiences through intelligent automation and predictive analytics.",
     keyFeatures: [
       "AI-Powered Risk Assessment", 
@@ -128,12 +129,92 @@ export const industriesData = [
       "Energy trading algorithms", 
       "Asset performance monitoring"
     ]
+  },
+  {
+    id: 6,
+    name: "Transportation",
+    slug: "transportation",
+    image: "/images/transportation.jpeg",
+    brief: "Revolutionize transportation with AI-powered route optimization, fleet management, and logistics automation.",
+    description: "Transform transportation and logistics operations with AI-driven route optimization, predictive maintenance, and intelligent fleet management for enhanced efficiency and reduced costs.",
+    keyFeatures: [
+      "Route Optimization AI",
+      "Fleet Management Systems",
+      "Predictive Maintenance",
+      "Real-time Tracking"
+    ],
+    benefits: [
+      "Reduce fuel costs by 25%",
+      "Optimize delivery routes",
+      "Improve fleet utilization",
+      "Enhance customer satisfaction"
+    ],
+    useCases: [
+      "Dynamic route planning",
+      "Fleet performance monitoring",
+      "Demand-based scheduling",
+      "Last-mile delivery optimization"
+    ]
+  },
+  {
+    id: 7,
+    name: "Telecommunications",
+    slug: "telecommunications",
+    image: "/images/telecommunication.png",
+    brief: "Transform telecom networks with AI-driven network optimization, customer service automation, and predictive analytics.",
+    description: "Enhance telecommunications infrastructure with AI-powered network management, intelligent customer service, and predictive maintenance for superior connectivity and customer experience.",
+    keyFeatures: [
+      "Network Optimization AI",
+      "Intelligent Customer Support",
+      "Predictive Network Maintenance",
+      "Fraud Detection Systems"
+    ],
+    benefits: [
+      "Improve network uptime by 50%",
+      "Reduce customer churn",
+      "Automate customer support",
+      "Detect network anomalies"
+    ],
+    useCases: [
+      "Self-optimizing networks",
+      "AI-powered chatbots",
+      "Network traffic prediction",
+      "Automated fraud prevention"
+    ]
+  },
+  {
+    id: 8,
+    name: "Education",
+    slug: "education",
+    image: "/images/education.png",
+    brief: "Transform education with AI-powered personalized learning, student analytics, and intelligent tutoring systems.",
+    description: "Revolutionize educational experiences with AI-driven personalized learning paths, student performance analytics, and intelligent assessment systems for improved learning outcomes.",
+    keyFeatures: [
+      "Personalized Learning Paths",
+      "AI Tutoring Systems",
+      "Student Performance Analytics",
+      "Automated Grading"
+    ],
+    benefits: [
+      "Improve learning outcomes by 35%",
+      "Personalize education experience",
+      "Reduce administrative workload",
+      "Identify at-risk students early"
+    ],
+    useCases: [
+      "Adaptive learning platforms",
+      "Intelligent tutoring systems",
+      "Automated essay grading",
+      "Student engagement tracking"
+    ]
   }
 ];
+
 
 export const getIndustryBySlug = (slug) => {
   return industriesData.find(industry => industry.slug === slug);
 };
+
 
 export const getAllIndustries = () => {
   return industriesData;
